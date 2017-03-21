@@ -27,7 +27,7 @@ def get_word_freq(words):
 
     word_freq_map = {};
 
-    return Counter(words);
+    return dict(Counter(words));
 
 # Filteration method 
 # Portable based on filter required
@@ -83,8 +83,36 @@ def train_data():
 # Method that starts the program
 def main():
 
+    # Dictionary of filename to frequencies
     data_stats = train_data();
-    
+
+
+    for filename in glob.glob('books/Bramah_The_Mirror_of_Kong_Ho.txt'):    
+        f = open(filename, 'r', encoding='utf8')
+
+        # Read the file
+        text = f.read()
+
+        # Extracting core content - removing metadata
+        text = remove_book_metadata(text);
+
+        # Vector of all the from a given book
+        words = text.split();
+
+        # Filter words to include alphanumeric and apostrophe
+        filter(words, "");
+
+        # Need to get word-frequency of this text and store it
+        # This information is linked to the author who wrote it
+
+        # Store the information and just compare it
+        word_freq = get_word_freq(words);
+
+        print(word_freq);
+
+
+
+
 
 main();
 
