@@ -71,13 +71,8 @@ def train_data():
     return data_stats;
 
 
-# Method that starts the program
-def main():
-
-    # Dictionary of filename to frequencies
-    # After training data
-    data_stats = train_data();
-    test_name = "Bramah_The_Mirror_of_Kong_Ho";
+# Method to comapre the test data vs trained data to detect best match
+def detect_author(data_stats, test_name):
 
     for test_filename in glob.glob('books/' + test_name + '.txt'):    
         f = open(test_filename, 'r', encoding='utf8')
@@ -116,7 +111,7 @@ def main():
         # Possibly resulting error = 0, when in reality it is not
         
         # Comparing word frequencies of trained data and test
-
+        # Map of filename to error with regard to test and data file
         filename_error_map = {};
 
         # For a given corpus file, 
@@ -144,11 +139,26 @@ def main():
         num_training_files = len(data_stats);
 
         # Returns a tuple of sorted file names based on value (the error)
-        filename_error_sorted = sorted(filename_error_map.items(), key=operator.itemgetter(1))
+        filename_error_sorted = sorted(filename_error_map.items(), key = operator.itemgetter(1))
 
+        print("Below are the stats for closest match (best to worst match): ");
         for filename in filename_error_sorted:
+
+            # f = open(test_filename, 'r', encoding='utf8')
+            # auth_name = get_author_name(f.read());
+            # print (auth_name + " " + str(filename[1]))
             print(filename[0] + " " + str(filename[1]));
 
+
+# Method that starts the program
+def main():
+
+    # Dictionary of filename to frequencies
+    # After training data
+    data_stats = train_data();
+
+    test_name = "Zane Grey_Tales of Lonely Trails";
+    detect_author(data_stats, test_name);
 
 main();
 
