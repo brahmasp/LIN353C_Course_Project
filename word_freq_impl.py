@@ -229,8 +229,10 @@ def main():
     data_stats = train_data_word_freq();
 
     # Testing all files in the test_data directory
-    for test_filename in glob.glob('test_data/*.txt'): 
-        detect_author_word_freq(data_stats, str(test_filename));
+    for test_filename in glob.glob('test_data/*.txt'):
+        print(" ");
+        print("Currently testing file: " + test_filename); 
+        detect_author_word_freq(data_stats, test_filename);
 
 main();
 
