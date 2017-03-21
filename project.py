@@ -3,6 +3,7 @@
 from collections import Counter
 import glob
 import re
+import operator
 
 # COMPLETE
 def get_author_name(text):
@@ -76,10 +77,10 @@ def main():
     # Dictionary of filename to frequencies
     # After training data
     data_stats = train_data();
-    test_filename = "Bramah_The_Mirror_of_Kong_Ho";
+    test_name = "Bramah_The_Mirror_of_Kong_Ho";
 
-    for filename in glob.glob('books/' + test_filename + '.txt'):    
-        f = open(filename, 'r', encoding='utf8')
+    for test_filename in glob.glob('books/' + test_name + '.txt'):    
+        f = open(test_filename, 'r', encoding='utf8')
 
         # Read the file
         test_text = f.read()
@@ -140,7 +141,16 @@ def main():
         # After accumulating all the errors.
         # Need to find min error and get corresponding filename
         # This filename is the closest match
-        
+
+
+        num_training_files = len(data_stats);
+
+        # Returns a tuple of sorted file names based on value (the error)
+        filename_error_sorted = sorted(filename_error_map.items(), key=operator.itemgetter(1))
+
+        for filename in filename_error_sorted:
+            print(filename[0] + " " + str(filename[1]));
+
 
 main();
 
