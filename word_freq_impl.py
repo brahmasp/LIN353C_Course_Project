@@ -35,8 +35,8 @@ def filter_words(words, filter):
         words[index] = re.sub(r"[^\w']+", "", word, flags=re.UNICODE);
 
 # Method to "train" algorithm
-
-def train_data():
+# Training is based on check occurences of word in a story
+def train_data_word_freq():
 
     # Dictionary of filename to word_freq map
     data_stats = {};
@@ -70,9 +70,107 @@ def train_data():
 
     return data_stats;
 
+def success_based_closeness(data_stats, test_word_freq):
+
+    # Comparing word frequencies of trained data and test
+    # Map of filename to error with regard to test and data file
+    filename_success_failure_map = {};
+
+    test_file_num_words = len(test_word_freq);
+    success = 0;
+    # For a given corpus file, 
+    # traverse through all words of test file
+    for data_filename in data_stats:
+
+        # Initially zero error with respect to test data
+        filename_success_failure_map[data_filename] = 0;
+        for word in test_word_freq:
+
+            # If the frequency of a given word in test and data file is 0, then success
+            if word in data_stats[data_filename] and (data_stats[data_filename][word] - test_word_freq[word]) == 0:
+                success += 1;
+
+        filename_success_failure_map[data_filename] = (success / test_file_num_words) * 100;
+        success = 0;
+
+    # After accumulating all the errors.
+    # Need to find min error and get corresponding filename
+    # This filename is the closest match
+    num_training_files = len(data_stats);
+
+    # Returns a tuple of sorted file names based on percentage of closeness
+    # In descending order
+    filename_success_failure_sorted = sorted(filename_success_failure_map.items(), key = operator.itemgetter(1), reverse = True)
+
+    print("Stats for closest match (success-failure method) (best to worst match): ");
+    for filename in filename_success_failure_sorted:
+
+        # f = open(test_filename, 'r', encoding='utf8')
+        # auth_name = get_author_name(f.read());
+        # print (auth_name + " " + str(filename[1]))
+        print("Percentage of closeness: " + str(filename[1]) + ", File name: " + filename[0]);
+
+def error_based_closeness(data_stats, test_word_freq):
+
+    filename_error_map = {};
+
+    # For a given corpus file, 
+    # traverse through all words of test file
+    for data_filename in data_stats:
+
+        # Initially zero error with respect to test data
+        filename_error_map[data_filename] = 0;
+        for word in test_word_freq:
+
+            # If word that was in test data is not in corpus the error is
+            # (count - 0)^2
+            # where 0 is because word didnt exist in given file
+            if word not in data_stats[data_filename]:
+                filename_error_map[data_filename] += (test_word_freq[word]**2);
+
+            # If word does exist, we want to find the squared difference
+            else:
+                filename_error_map[data_filename] += ((data_stats[data_filename][word] - test_word_freq[word])**2);
+
+
+    # After accumulating all the errors.
+    # Need to find min error and get corresponding filename
+    # This filename is the closest match
+    num_training_files = len(data_stats);
+
+    # Returns a tuple of sorted file names based on value (the error)
+    filename_error_sorted = sorted(filename_error_map.items(), key = operator.itemgetter(1))
+
+    print("Stats for closest match (squared error) (best to worst match): ");
+    for index, filename in enumerate(filename_error_sorted):
+
+        # f = open(test_filename, 'r', encoding='utf8')
+        # auth_name = get_author_name(f.read());
+        # print (auth_name + " " + str(filename[1]))
+        print("Rank: " + str(index + 1) + ", File name: " + filename[0]);
+
+
 
 # Method to comapre the test data vs trained data to detect best match
-def detect_author(data_stats, test_name):
+# Based on how often a author uses a word (by measuring a words occurence)
+# We measure the closness the test data frequencies are to each author
+# Hence determining the closest match
+
+# Given this one way of looking at freqencues, we have two ways
+# of measuring closeness
+
+# 1) Measuring how many times a word was exactly used. Identical frequencies
+# is critical in this. A giving a percentage of success. 
+# This method is more discrete in that, we consider it to be a success
+# or failre immedaitely based on a certain condition (if the counts are
+# exact)
+
+# 2) Measuring count differences (squared errors) and put them in ascending 
+# order. In other words, best to worst match
+# This method is less structured and is more flexibile in the sense that we
+# consider closeness by just measuring difference rather ruling something 
+# out because it was not exact
+def detect_author_word_freq(data_stats, test_name):
 
     for test_filename in glob.glob('test_data/' + test_name + '.txt'):    
         f = open(test_filename, 'r', encoding='utf8')
@@ -104,44 +202,13 @@ def detect_author(data_stats, test_name):
         # Success is measured if given the word existed in both dictionaries
         # its difference in count == 0
 
-        
-        # Comparing word frequencies of trained data and test
-        # Map of filename to error with regard to test and data file
-        filename_error_map = {};
 
-        test_file_num_words = len(test_word_freq);
-        success = 0;
-        # For a given corpus file, 
-        # traverse through all words of test file
-        for data_filename in data_stats:
+        ''' First impl based on comments above method '''
+        success_based_closeness(data_stats, test_word_freq);
 
-            # Initially zero error with respect to test data
-            filename_error_map[data_filename] = 0;
-            for word in test_word_freq:
-
-                # If the frequency of a given word in test and data file is 0, then success
-                if word in data_stats[data_filename] and (data_stats[data_filename][word] - test_word_freq[word]) == 0:
-                    success += 1;
-
-            filename_error_map[data_filename] = (success / test_file_num_words) * 100;
-            success = 0;
-
-        # After accumulating all the errors.
-        # Need to find min error and get corresponding filename
-        # This filename is the closest match
-        num_training_files = len(data_stats);
-
-        # Returns a tuple of sorted file names based on percentage of closeness
-        # In descending order
-        filename_error_sorted = sorted(filename_error_map.items(), key = operator.itemgetter(1), reverse = True)
-
-        print("Below are the stats for closest match (best to worst match): ");
-        for filename in filename_error_sorted:
-
-            # f = open(test_filename, 'r', encoding='utf8')
-            # auth_name = get_author_name(f.read());
-            # print (auth_name + " " + str(filename[1]))
-            print(filename[0] + " " + str(filename[1]));
+        print(" ");
+        ''' Second impl based on comments above method '''
+        error_based_closeness(data_stats, test_word_freq);
 
 
 # Method that starts the program
@@ -149,10 +216,10 @@ def main():
 
     # Dictionary of filename to frequencies
     # After training data
-    data_stats = train_data();
+    data_stats = train_data_word_freq();
 
     test_name = "Bramah_Kai_Lung_Golden_Hours";
-    detect_author(data_stats, test_name);
+    detect_author_word_freq(data_stats, test_name);
 
 main();
 
