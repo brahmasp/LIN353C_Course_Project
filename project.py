@@ -6,12 +6,11 @@ import re
 from collections import Counter
 
 
-# Method to get word to frequency map
-def get_word_freq(words):
 
-    word_freq_map = {};
+def get_author_name(text):
 
-    return Counter(words);
+    re_start = re.search(r'Author:', text)
+    return -1;
 
 
 # Method to remove top and bottom metadata info from corpus
@@ -23,6 +22,13 @@ def remove_book_metadata(text):
     return core_text;
 
 
+# Method to get word to frequency map
+def get_word_freq(words):
+
+    word_freq_map = {};
+
+    return Counter(words);
+
 # Filteration method 
 # Portable based on filter required
 
@@ -32,10 +38,14 @@ def filter(words, filter):
     for index, word in enumerate(words):
         words[index] = re.sub(r"[^\w']+", "", word, flags=re.UNICODE);
 
-# Method that starts the program
-def main():
+# Method to "train" algorithm
+
+def train_data():
 
     num_files = 1;
+
+    # Dictionary of filename to word_freq map
+    data_stats = {};
 
     # Cycle through all the test files
     for filename in glob.glob('books/*.txt'):
@@ -62,12 +72,19 @@ def main():
         # Store the information and just compare it
         word_freq = get_word_freq(words);
 
+        if filename not in data_stats:
+            data_stats[filename] = word_freq;
+        else:
+            print("Error same file name!")
+
+    return data_stats;
 
 
-        #print(word_freq);
-        break;
+# Method that starts the program
+def main():
 
-
+    data_stats = train_data();
+    
 
 main();
 
