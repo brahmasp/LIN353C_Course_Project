@@ -74,7 +74,7 @@ def train_data():
 # Method to comapre the test data vs trained data to detect best match
 def detect_author(data_stats, test_name):
 
-    for test_filename in glob.glob('books/' + test_name + '.txt'):    
+    for test_filename in glob.glob('test_data/' + test_name + '.txt'):    
         f = open(test_filename, 'r', encoding='utf8')
 
         # Read the file
@@ -131,7 +131,8 @@ def detect_author(data_stats, test_name):
         # This filename is the closest match
         num_training_files = len(data_stats);
 
-        # Returns a tuple of sorted file names based on value (the error)
+        # Returns a tuple of sorted file names based on percentage of closeness
+        # In descending order
         filename_error_sorted = sorted(filename_error_map.items(), key = operator.itemgetter(1), reverse = True)
 
         print("Below are the stats for closest match (best to worst match): ");
@@ -150,7 +151,7 @@ def main():
     # After training data
     data_stats = train_data();
 
-    test_name = "Mrs. Alexander_Kate Vernon Vol2";
+    test_name = "Bramah_Kai_Lung_Golden_Hours";
     detect_author(data_stats, test_name);
 
 main();
