@@ -70,6 +70,11 @@ def train_data_word_freq():
 
     return data_stats;
 
+# Measuring how many times a word was exactly used. Identical frequencies
+# is critical in this. A giving a percentage of success. 
+# This method is more discrete in that, we consider it to be a success
+# or failre immedaitely based on a certain condition (if the counts are
+# exact)
 def success_based_closeness(data_stats, test_word_freq):
 
     # Comparing word frequencies of trained data and test
@@ -110,6 +115,11 @@ def success_based_closeness(data_stats, test_word_freq):
         # print (auth_name + " " + str(filename[1]))
         print("Percentage of closeness: " + str(filename[1]) + ", File name: " + filename[0]);
 
+# Measuring count differences (squared errors) and put them in ascending 
+# order. In other words, best to worst match
+# This method is less structured and is more flexibile in the sense that we
+# consider closeness by just measuring difference rather ruling something 
+# out because it was not exact
 def error_based_closeness(data_stats, test_word_freq):
 
     filename_error_map = {};
@@ -172,7 +182,7 @@ def error_based_closeness(data_stats, test_word_freq):
 # out because it was not exact
 def detect_author_word_freq(data_stats, test_name):
 
-    for test_filename in glob.glob('test_data/' + test_name + '.txt'):    
+    for test_filename in glob.glob(test_name):    
         f = open(test_filename, 'r', encoding='utf8')
 
         # Read the file
@@ -218,8 +228,9 @@ def main():
     # After training data
     data_stats = train_data_word_freq();
 
-    test_name = "Bramah_Kai_Lung_Golden_Hours";
-    detect_author_word_freq(data_stats, test_name);
+    # Testing all files in the test_data directory
+    for test_filename in glob.glob('test_data/*.txt'): 
+        detect_author_word_freq(data_stats, str(test_filename));
 
 main();
 
