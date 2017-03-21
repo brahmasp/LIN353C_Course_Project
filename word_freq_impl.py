@@ -77,6 +77,7 @@ def train_data_word_freq():
 # exact)
 def success_based_closeness(data_stats, test_word_freq):
 
+    DECIMAL_FORMAT = 2;
     # Comparing word frequencies of trained data and test
     # Map of filename to error with regard to test and data file
     filename_success_failure_map = {};
@@ -95,7 +96,7 @@ def success_based_closeness(data_stats, test_word_freq):
             if word in data_stats[data_filename] and (data_stats[data_filename][word] - test_word_freq[word]) == 0:
                 success += 1;
 
-        filename_success_failure_map[data_filename] = (success / test_file_num_words) * 100;
+        filename_success_failure_map[data_filename] = round((success / test_file_num_words) * 100, DECIMAL_FORMAT);
         success = 0;
 
     # After accumulating all the errors.
@@ -113,7 +114,7 @@ def success_based_closeness(data_stats, test_word_freq):
         # f = open(test_filename, 'r', encoding='utf8')
         # auth_name = get_author_name(f.read());
         # print (auth_name + " " + str(filename[1]))
-        print("Percentage of closeness: " + str(filename[1]) + ", File name: " + filename[0]);
+        print("Percentage of closeness: " + str(filename[1]) + "%, File name: " + filename[0]);
 
 # Measuring count differences (squared errors) and put them in ascending 
 # order. In other words, best to worst match
