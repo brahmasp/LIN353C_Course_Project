@@ -100,20 +100,17 @@ def detect_author(data_stats, test_name):
         # corupus.
         # Traverse through test data and compare frequency for
         # a given word with training data
-        # Find the squared error. The author corresponding to
-        # least error is the closest match
-        # Error is simply squared differences
-        # (similar approach used in machine learning models) for
-        # cost function
+        # Count the number of times there was a success
+        # Success is measured if given the word existed in both dictionaries
+        # its difference in count == 0
 
-        # Squaring it because adding error. If didnt square possible negative
-        # numbers may cancel out positive.
-        # Possibly resulting error = 0, when in reality it is not
         
         # Comparing word frequencies of trained data and test
         # Map of filename to error with regard to test and data file
         filename_error_map = {};
 
+        test_file_num_words = len(test_word_freq);
+        success = 0;
         # For a given corpus file, 
         # traverse through all words of test file
         for data_filename in data_stats:
@@ -122,16 +119,12 @@ def detect_author(data_stats, test_name):
             filename_error_map[data_filename] = 0;
             for word in test_word_freq:
 
-                # If word that was in test data is not in corpus the error is
-                # (count - 0)^2
-                # where 0 is because word didnt exist in given file
-                if word not in data_stats[data_filename]:
-                    filename_error_map[data_filename] += (test_word_freq[word]**2);
+                # If the frequency of a given word in test and data file is 0, then success
+                if word in data_stats[data_filename] and (data_stats[data_filename][word] - test_word_freq[word]) == 0:
+                    success += 1;
 
-                # If word does exist, we want to find the squared difference
-                else:
-                    filename_error_map[data_filename] += ((data_stats[data_filename][word] - test_word_freq[word])**2);
-
+            filename_error_map[data_filename] = (success / test_file_num_words) * 100;
+            success = 0;
 
         # After accumulating all the errors.
         # Need to find min error and get corresponding filename
@@ -139,7 +132,7 @@ def detect_author(data_stats, test_name):
         num_training_files = len(data_stats);
 
         # Returns a tuple of sorted file names based on value (the error)
-        filename_error_sorted = sorted(filename_error_map.items(), key = operator.itemgetter(1))
+        filename_error_sorted = sorted(filename_error_map.items(), key = operator.itemgetter(1), reverse = True)
 
         print("Below are the stats for closest match (best to worst match): ");
         for filename in filename_error_sorted:
@@ -157,7 +150,7 @@ def main():
     # After training data
     data_stats = train_data();
 
-    test_name = "Zane Grey_Tales of Lonely Trails";
+    test_name = "Mrs. Alexander_Kate Vernon Vol2";
     detect_author(data_stats, test_name);
 
 main();
