@@ -84,36 +84,38 @@ def train_data():
 def main():
 
     # Dictionary of filename to frequencies
+    # After training data
     data_stats = train_data();
+    test_filename = "Bramah_The_Mirror_of_Kong_Ho";
 
-
-    for filename in glob.glob('books/Bramah_The_Mirror_of_Kong_Ho.txt'):    
+    for filename in glob.glob('books/' + test_filename + '.txt'):    
         f = open(filename, 'r', encoding='utf8')
 
         # Read the file
-        text = f.read()
+        test_text = f.read()
 
         # Extracting core content - removing metadata
-        text = remove_book_metadata(text);
+        test_text = remove_book_metadata(test_text);
 
         # Vector of all the from a given book
-        words = text.split();
+        test_words = test_text.split();
 
         # Filter words to include alphanumeric and apostrophe
-        filter(words, "");
+        filter(test_words, "");
 
         # Need to get word-frequency of this text and store it
         # This information is linked to the author who wrote it
 
         # Store the information and just compare it
-        word_freq = get_word_freq(words);
+        test_word_freq = get_word_freq(test_words);
 
-        print(word_freq);
+        
+        # Comparing word frequencies of trained data and test
+        for data_filename in data_stats:
+            if data_stats[data_filename] == test_word_freq:
+                print(data_filename);
 
-
-
-
-
+                
 main();
 
     
