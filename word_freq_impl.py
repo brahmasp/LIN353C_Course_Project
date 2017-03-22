@@ -2,10 +2,11 @@
 
 from collections import Counter
 import glob
+import math
 import re
 import operator
 
-# COMPLETE
+# TODO: COMPLETE
 def get_author_name(text):
 
     re_start = re.search(r'Author:', text)
@@ -28,11 +29,23 @@ def get_word_freq(words):
 # Filteration method 
 # Portable based on filter required
 
+# TODO
 # TEMP: hardcoded to include alphanumeric and apostrophe
 def filter_words(words, filter):
 
     for index, word in enumerate(words):
         words[index] = re.sub(r"[^\w']+", "", word, flags=re.UNICODE);
+
+# Magnitude of word counts (i.e. treat the word counts as a vector, and
+# get its magnitude)
+def dict_mag(d):
+    ret = 0
+
+    # Add the squares of each element
+    for i in d.values():
+        ret += i**2
+
+    return math.sqrt(ret)
 
 # Method to "train" algorithm
 # Training is based on check occurences of word in a story
@@ -66,14 +79,14 @@ def train_data_word_freq():
         if filename not in data_stats:
             data_stats[filename] = word_freq;
         else:
-            print("Error same file name! " + filename)
+            print("Error: same file name! " + filename)
 
     return data_stats;
 
 # Measuring how many times a word was exactly used. Identical frequencies
 # is critical in this. A giving a percentage of success. 
 # This method is more discrete in that, we consider it to be a success
-# or failre immedaitely based on a certain condition (if the counts are
+# or failure imemdiately based on a certain condition (if the counts are
 # exact)
 def success_based_closeness(data_stats, test_word_freq):
 
@@ -102,7 +115,7 @@ def success_based_closeness(data_stats, test_word_freq):
     # After accumulating all the errors.
     # Need to find min error and get corresponding filename
     # This filename is the closest match
-    num_training_files = len(data_stats);
+    num_training_files = len(data_stats);   
 
     # Returns a tuple of sorted file names based on percentage of closeness
     # In descending order
@@ -115,7 +128,7 @@ def success_based_closeness(data_stats, test_word_freq):
         # auth_name = get_author_name(f.read());
         # print (auth_name + " " + str(filename[1]))
         print("Percentage of closeness: " + str(filename[1]) + "%, File name: " + filename[0]);
-
+    
 # Measuring count differences (squared errors) and put them in ascending 
 # order. In other words, best to worst match
 # This method is less structured and is more flexibile in the sense that we
@@ -162,12 +175,59 @@ def error_based_closeness(data_stats, test_word_freq):
 
 
 
+# Take the two word frequencies as vectors. Then, take the angles
+# between the two vectors as the closeness. Smaller the angle, closer
+# the documents.
+def cosine_similarity(d1, d2):
+    dot_product = 0
+    all_words = set().union(d1.keys(), d2.keys())
+
+    # Calculate the numerator (the dot product)
+    for i in all_words:
+        # The second argument in `get` is a default value; i.e. if `i`
+        # doesn't exist in the dict, then return 0
+        dot_product += d1.get(i, 0) * d2.get(i, 0)
+
+    # Calculate magnitudes of the two vectors
+    d1_mag = dict_mag(d1)
+    d2_mag = dict_mag(d2)
+
+    # Take the inverse cosine based on the dot product formula
+    return math.acos(dot_product / (d1_mag * d2_mag))
+
+def cosine_based_closeness(data_stats, test_word_freq):
+
+    filename_angle_map = {}
+
+    # For a given corpus file, 
+    # traverse through all words of test file
+    for data_filename in data_stats:
+        # Compare the angle between the current test file, and
+        # the training corpus
+        filename_angle_map[data_filename] = cosine_similarity(data_stats[data_filename], test_word_freq)
+
+
+    # After accumulating all the errors.
+    # Need to find min error and get corresponding filename
+    # This filename is the closest match
+    num_training_files = len(data_stats);
+
+    # Returns a tuple of sorted file names based on value (the error)
+    filename_angle_sorted = sorted(filename_angle_map.items(), key = operator.itemgetter(1), reverse=True)
+
+    print("Stats for closest match (cosine similarity) (best to worst match): ");
+    for index, filename in enumerate(filename_angle_sorted):
+        # f = open(test_filename, 'r', encoding='utf8')
+        # auth_name = get_author_name(f.read());
+        # print (auth_name + " " + str(filename[1]))
+        print("Rank: " + str(index + 1) + ", File name: " + filename[0]);
+
 # Method to comapre the test data vs trained data to detect best match
 # Based on how often a author uses a word (by measuring a words occurence)
 # We measure the closness the test data frequencies are to each author
 # Hence determining the closest match
 
-# Given this one way of looking at freqencues, we have two ways
+# Given this one way of looking at frequencies, we have two ways
 # of measuring closeness
 
 # 1) Measuring how many times a word was exactly used. Identical frequencies
@@ -181,6 +241,10 @@ def error_based_closeness(data_stats, test_word_freq):
 # This method is less structured and is more flexibile in the sense that we
 # consider closeness by just measuring difference rather ruling something 
 # out because it was not exact
+
+# 3) Measuring the angle between the two vectors of word frequencies,
+# and sorting the results in order of smallest angle. This should
+# account for different document sizes.
 def detect_author_word_freq(data_stats, test_name):
 
     for test_filename in glob.glob(test_name):    
@@ -221,6 +285,9 @@ def detect_author_word_freq(data_stats, test_name):
         ''' Second impl based on comments above method '''
         error_based_closeness(data_stats, test_word_freq);
 
+        print(" ");
+        ''' Third impl based on comments above method '''
+        cosine_based_closeness(data_stats, test_word_freq)
 
 # Method that starts the program
 def main():
