@@ -213,14 +213,14 @@ def cosine_based_closeness(data_stats, test_word_freq):
     num_training_files = len(data_stats);
 
     # Returns a tuple of sorted file names based on value (the error)
-    filename_angle_sorted = sorted(filename_angle_map.items(), key = operator.itemgetter(1), reverse=True)
+    filename_angle_sorted = sorted(filename_angle_map.items(), key = operator.itemgetter(1))
 
     print("Stats for closest match (cosine similarity) (best to worst match): ");
     for index, filename in enumerate(filename_angle_sorted):
         # f = open(test_filename, 'r', encoding='utf8')
         # auth_name = get_author_name(f.read());
         # print (auth_name + " " + str(filename[1]))
-        print("Rank: " + str(index + 1) + ", File name: " + filename[0]);
+        print("Rank: " + str(index + 1) + " (" + str(filename[1]) + " rad), File name: " + filename[0]);
 
 # Method to comapre the test data vs trained data to detect best match
 # Based on how often a author uses a word (by measuring a words occurence)
