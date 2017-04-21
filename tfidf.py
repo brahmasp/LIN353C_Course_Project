@@ -124,8 +124,6 @@ def get_tfidf_map(name_list, word_counts_per_file):
 	# Else it will be data set union test file, then new one got added
 	all_files = list(set().union(name_list, filename_list));
 
-
-
 	all_word_counts = dict(word_counts_per_file);
 
 	total_docs = len(all_files);
@@ -164,7 +162,6 @@ def get_tfidf_map(name_list, word_counts_per_file):
 
 	# Returning map of file name -> tfidf of every word in the given doc
 
-	print("size of tfidf map " + str(len(tfidf_map)));
 	return tfidf_map;
 
 def train_data_word_freq():
