@@ -32,7 +32,7 @@ def get_word_freq(words):
 	return dict(Counter(words));
 
 
-def check_tfidf_closeness(tfidf_map, test_tfidf_map):
+def check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename):
 
 	# tfidf_map is of form
 	"""
@@ -60,8 +60,26 @@ def check_tfidf_closeness(tfidf_map, test_tfidf_map):
 
 	"""
 
-	
+	test_tfidf_score = test_tfidf_map[test_filename];
 
+	match_error_map = {};
+	for train_data in tfidf_map:
+
+		sq_error = 0;
+
+		for test_word in test_tfidf_score:
+			if test_word not in tfidf_map[train_data]:
+				sq_error = sq_error + (test_tfidf_score[test_word])**2
+			else:
+				sq_error = sq_error + (test_tfidf_score[test_word] - tfidf_map[train_data][test_word])**2
+
+		match_error_map[train_data] = sq_error;
+
+	for index, filename in enumerate(match_error_map):
+		# f = open(test_filename, 'r', encoding='utf8')
+		# auth_name = get_author_name(f.read());
+		# print (auth_name + " " + str(filename[1]))
+		print("Rank: " + str(index + 1) + "File name: " + filename);
 
 
 def get_tfidf_map(file_list_contents, word_counts_per_file):
@@ -95,6 +113,8 @@ def get_tfidf_map(file_list_contents, word_counts_per_file):
 			tfidf_scores[word] = tfidf_score;
 		
 		tfidf_map[filename] = tfidf_scores;
+
+	return tfidf_map;
 
 def train_data_word_freq():
 
@@ -210,9 +230,9 @@ def detect_author_word_freq(tfidf_map, test_name):
 		# Arguments passed into method will always be size
 		# one, list has only one element
 		# map has one entry filename -> count, map
-		test_tfidf_map = get_tfidf_map(test_file_list_contents, word_counts_per_file);
+		test_tfidf_map = get_tfidf_map(test_file_list_contents, test_word_counts_per_file);
 
-		check_tfidf_closeness(tfidf_map, test_tfidf_map);
+		check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename);
 
 
 
