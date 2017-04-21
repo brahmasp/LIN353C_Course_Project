@@ -12,6 +12,14 @@ import math
 import re
 import operator
 
+
+# Global data of the training examples
+filename_list = [];
+
+# Dictionary of filename to word_freq map
+word_counts = {};
+
+
 # Method to remove top and bottom metadata info from corpus
 def remove_book_metadata(text):
 	re_start = re.search(r'\*\*\*\s?START.*\*\*\*', text)
@@ -31,6 +39,32 @@ def filter_words(words, filter):
 def get_word_freq(words):
 	return dict(Counter(words));
 
+def cosine_similarity (d1, d2):
+
+	dot_product = 0
+	all_words = set().union(d1.keys(), d2.keys())
+
+	# Calculate the numerator (the dot product)
+	for i in all_words:
+		# The second argument in `get` is a default value; i.e. if `i`
+		# doesn't exist in the dict, then return 0
+		dot_product += d1.get(i, 0) * d2.get(i, 0)
+
+	# Calculate magnitudes of the two vectors
+	d1_mag = dict_mag(d1)
+	d2_mag = dict_mag(d2)
+
+	# Take the inverse cosine based on the dot product formula
+	return math.acos(dot_product / (d1_mag * d2_mag))
+
+def dict_mag(d):
+	ret = 0
+
+	# Add the squares of each element
+	for i in d.values():
+		ret += i**2
+
+	return math.sqrt(ret)
 
 def check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename):
 
@@ -65,15 +99,7 @@ def check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename):
 	match_error_map = {};
 	for train_data in tfidf_map:
 
-		sq_error = 0;
-
-		for test_word in test_tfidf_score:
-			if test_word not in tfidf_map[train_data]:
-				sq_error = sq_error + (test_tfidf_score[test_word])**2
-			else:
-				sq_error = sq_error + (test_tfidf_score[test_word] - tfidf_map[train_data][test_word])**2
-
-		match_error_map[train_data] = sq_error;
+		match_error_map[train_data] = cosine_similarity(tfidf_map[train_data], test_tfidf_score);
 
 	match_error_map_sorted = sorted(match_error_map.items(), key = operator.itemgetter(1))
 
@@ -84,17 +110,36 @@ def check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename):
 		print("Rank: " + str(index + 1) + " file name: " + filename[0]);
 
 
-def get_tfidf_map(file_list_contents, word_counts_per_file):
+
+# Two cases
+# 1. name_list with training data names and their corresponding counts
+# 2. name_list with only test data and its corresponding counts
+
+
+def get_tfidf_map(name_list, word_counts_per_file):
 
 	tfidf_map = {};
 
-	total_docs = len(file_list_contents);
+	# Will either be data set union data set which remains the same
+	# Else it will be data set union test file, then new one got added
+	all_files = list(set().union(name_list, filename_list));
+
+
+
+	all_word_counts = dict(word_counts_per_file);
+
+	total_docs = len(all_files);
+
+	# Add the word counts from the training data into all_word_counts
+	for key in word_counts:
+		if key not in all_word_counts:
+			all_word_counts[key] = word_counts[key];
 
 	# For each file
-	for filename in file_list_contents:
+	for filename in name_list:
 
 		# Get word count freq for each file
-		word_count_freq = word_counts_per_file[filename]
+		word_count_freq = all_word_counts[filename]
 		tfidf_scores = {};
 
 		# Getting tfidf score for each word in the given document
@@ -108,8 +153,8 @@ def get_tfidf_map(file_list_contents, word_counts_per_file):
 			# of each file to see if the current word
 			# exists in other docs.
 			# Value should be minimum always 1
-			for other_file in word_counts_per_file:
-				if word in word_counts_per_file[other_file]:
+			for other_file in all_word_counts:
+				if word in all_word_counts[other_file]:
 					occurence_other_doc += 1;
 
 			tfidf_score = count_per_doc * math.log10(total_docs / occurence_other_doc);
@@ -118,15 +163,11 @@ def get_tfidf_map(file_list_contents, word_counts_per_file):
 		tfidf_map[filename] = tfidf_scores;
 
 	# Returning map of file name -> tfidf of every word in the given doc
+
+	print("size of tfidf map " + str(len(tfidf_map)));
 	return tfidf_map;
 
 def train_data_word_freq():
-
-
-	file_list_contents = [];
-
-    # Dictionary of filename to word_freq map
-	word_counts_per_file = {};
 
     # Cycle through all the test files
 	for filename in glob.glob('books/*.txt'):
@@ -151,13 +192,13 @@ def train_data_word_freq():
 		# Store the information and just compare it
 		word_freq = get_word_freq(words);
 
-		if filename not in word_counts_per_file:
-		    word_counts_per_file[filename] = word_freq;
+		if filename not in word_counts:
+		    word_counts[filename] = word_freq;
 		else:
 		    print("Error: same file name! " + filename)
 
-		if filename not in file_list_contents:
-			file_list_contents.append(filename);
+		if filename not in filename_list:
+			filename_list.append(filename);
 		else:
 			print("Content of file already recorded");
 
@@ -179,13 +220,13 @@ def train_data_word_freq():
 		then get tfidf for that word and given doc and store it
 	"""
 
-	tfidf_map = get_tfidf_map(file_list_contents, word_counts_per_file);
+	tfidf_map = get_tfidf_map(filename_list, word_counts);
 
 	return tfidf_map;
 
 def detect_author_word_freq(tfidf_map, test_name):
 
-	test_file_list_contents = [];
+	test_filename_list = [];
 
     # Dictionary of filename to word_freq map
 	test_word_counts_per_file = {};
@@ -226,15 +267,15 @@ def detect_author_word_freq(tfidf_map, test_name):
 		else:
 		    print("Error: same file name! " + test_filename)
 
-		if test_filename not in test_file_list_contents:
-			test_file_list_contents.append(test_filename);
+		if test_filename not in test_filename_list:
+			test_filename_list.append(test_filename);
 		else:
 			print("Content of file already recorded");
 
 		# Arguments passed into method will always be size
 		# one, list has only one element
 		# map has one entry filename -> count, map
-		test_tfidf_map = get_tfidf_map(test_file_list_contents, test_word_counts_per_file);
+		test_tfidf_map = get_tfidf_map(test_filename_list, test_word_counts_per_file);
 
 		check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename);
 
@@ -275,7 +316,6 @@ def main():
 		print(" ");
 		print("Currently testing file: " + test_filename); 
 		detect_author_word_freq(tfidf_map, test_filename);
-
 
 
 
