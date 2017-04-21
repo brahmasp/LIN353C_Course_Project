@@ -97,6 +97,7 @@ def get_tfidf_map(file_list_contents, word_counts_per_file):
 		word_count_freq = word_counts_per_file[filename]
 		tfidf_scores = {};
 
+		# Getting tfidf score for each word in the given document
 		# Get count of the given word and check occurence
 		# in other docs
 		for word in word_count_freq:
@@ -107,8 +108,8 @@ def get_tfidf_map(file_list_contents, word_counts_per_file):
 			# of each file to see if the current word
 			# exists in other docs.
 			# Value should be minimum always 1
-			for w in word_counts_per_file:
-				if word in word_counts_per_file[w]:
+			for other_file in word_counts_per_file:
+				if word in word_counts_per_file[other_file]:
 					occurence_other_doc += 1;
 
 			tfidf_score = count_per_doc * math.log10(total_docs / occurence_other_doc);
@@ -116,6 +117,7 @@ def get_tfidf_map(file_list_contents, word_counts_per_file):
 		
 		tfidf_map[filename] = tfidf_scores;
 
+	# Returning map of file name -> tfidf of every word in the given doc
 	return tfidf_map;
 
 def train_data_word_freq():
