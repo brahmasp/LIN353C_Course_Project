@@ -75,11 +75,13 @@ def check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename):
 
 		match_error_map[train_data] = sq_error;
 
-	for index, filename in enumerate(match_error_map):
+	match_error_map_sorted = sorted(match_error_map.items(), key = operator.itemgetter(1))
+
+	for index, filename in enumerate(match_error_map_sorted):
 		# f = open(test_filename, 'r', encoding='utf8')
 		# auth_name = get_author_name(f.read());
 		# print (auth_name + " " + str(filename[1]))
-		print("Rank: " + str(index + 1) + "File name: " + filename);
+		print("Rank: " + str(index + 1) + " file name: " + filename[0]);
 
 
 def get_tfidf_map(file_list_contents, word_counts_per_file):
