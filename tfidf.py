@@ -32,6 +32,38 @@ def get_word_freq(words):
 	return dict(Counter(words));
 
 
+def check_tfidf_closeness(tfidf_map, test_tfidf_map):
+
+	# tfidf_map is of form
+	"""
+	{
+		filename1: {
+			word1: tfidf score
+			word2: tfidf score
+		}
+		filename1: {
+			word1: tfidf score
+			word2: tfidf score
+		}
+
+	}
+	"""
+
+	#test_tfidf_map is of form
+	"""	
+	{
+		test_file: {
+			word1: tfidf score
+			word2: tfidf score
+		}
+	}
+
+	"""
+
+	
+
+
+
 def get_tfidf_map(file_list_contents, word_counts_per_file):
 
 	tfidf_map = {};
@@ -127,12 +159,12 @@ def train_data_word_freq():
 
 	return tfidf_map;
 
-def detect_author_word_freq(data_stats, test_name):
+def detect_author_word_freq(tfidf_map, test_name):
 
-	file_list_contents = [];
+	test_file_list_contents = [];
 
     # Dictionary of filename to word_freq map
-	word_counts_per_file = {};
+	test_word_counts_per_file = {};
 
 	for test_filename in glob.glob(test_name):    
 		f = open(test_filename, 'r', encoding='utf8')
@@ -165,15 +197,24 @@ def detect_author_word_freq(data_stats, test_name):
 		# its difference in count == 0
 
 
-		if test_filename not in word_counts_per_file:
-		    word_counts_per_file[test_filename] = test_word_freq;
+		if test_filename not in test_word_counts_per_file:
+		    test_word_counts_per_file[test_filename] = test_word_freq;
 		else:
 		    print("Error: same file name! " + test_filename)
 
-		if test_filename not in file_list_contents:
-			file_list_contents.append(test_filename);
+		if test_filename not in test_file_list_contents:
+			test_file_list_contents.append(test_filename);
 		else:
 			print("Content of file already recorded");
+
+		# Arguments passed into method will always be size
+		# one, list has only one element
+		# map has one entry filename -> count, map
+		test_tfidf_map = get_tfidf_map(test_file_list_contents, word_counts_per_file);
+
+		check_tfidf_closeness(tfidf_map, test_tfidf_map);
+
+
 
 
 def main():
