@@ -2,7 +2,7 @@
 
 '''
 Code below performs TDIDF numerical stats on a given mystery file to identify
-and other data sets (that "train" the algorithm 
+and other data sets (that "train" the algorithm
 
 TFIDF: Measures the importance of a word in a given corpus
 '''
@@ -84,7 +84,7 @@ def check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename):
 	"""
 
 	#test_tfidf_map is of form
-	"""	
+	"""
 	{
 		test_file: {
 			word1: tfidf score
@@ -157,7 +157,7 @@ def get_tfidf_map(name_list, word_counts_per_file):
 
 			tfidf_score = count_per_doc * math.log10(total_docs / occurence_other_doc);
 			tfidf_scores[word] = tfidf_score;
-		
+
 		tfidf_map[filename] = tfidf_scores;
 
 	# Returning map of file name -> tfidf of every word in the given doc
@@ -199,14 +199,14 @@ def train_data_word_freq():
 		else:
 			print("Content of file already recorded");
 
-	
+
 	# At this point
 	# Have map from file name to its contents
 	# Have map from file name to count of each word in that file
 
 	"""
 	iterate through map keys
-	
+
 	outer for loop is iterating over files
 	inner for loop iterating over all words in the doc
 		for a given word in a given doc
@@ -228,7 +228,7 @@ def detect_author_word_freq(tfidf_map, test_name):
     # Dictionary of filename to word_freq map
 	test_word_counts_per_file = {};
 
-	for test_filename in glob.glob(test_name):    
+	for test_filename in glob.glob(test_name):
 		f = open(test_filename, 'r', encoding='utf8')
 
 		# Read the file
@@ -279,8 +279,7 @@ def detect_author_word_freq(tfidf_map, test_name):
 
 
 
-def main():
-	
+if __name__ == "__main__":
 	# Get tfidf for all words
 	# sort list of tfidf stats and their corresponding word
 
@@ -301,8 +300,8 @@ def main():
 	# {file_name: {word1: tfidf, word2: tfdif score}}
 
 	"""
-	tfidf 
-	= count(word, in one doc) 
+	tfidf
+	= count(word, in one doc)
 		* log(total docs / num docs it appears in)
 	"""
 
@@ -311,10 +310,6 @@ def main():
 	# Testing all files in the test_data directory
 	for test_filename in glob.glob('test_data/*.txt'):
 		print(" ");
-		print("Currently testing file: " + test_filename); 
+		print("Currently testing file: " + test_filename);
 		detect_author_word_freq(tfidf_map, test_filename);
-
-
-
-main();
 
