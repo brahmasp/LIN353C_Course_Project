@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import nltk
 from collections import Counter
 import glob
@@ -15,10 +17,10 @@ def remove_book_metadata(text):
     re_start = re.search(r'\*\*\*\s?START.*\*\*\*', text)
     re_end = re.search(r'\*\*\*\s?END.*\*\*\*', text)
     core_text = text[re_start.span()[1] : re_end.span()[0]-1].strip()
-    
+
     return core_text;
 
-# Filteration method 
+# Filteration method
 # Portable based on filter required
 # TEMP: hardcoded to include alphanumeric and apostrophe
 def filter_words(words, filter):
@@ -26,7 +28,7 @@ def filter_words(words, filter):
     for index, word in enumerate(words):
         words[index] = re.sub(r"[^\w']+", "", word, flags=re.UNICODE);
 
-# get a cleaned up list of all the words in the file 
+# get a cleaned up list of all the words in the file
 def split_words(filename):
         f = open(filename, 'r', encoding='utf8')
 
@@ -57,7 +59,7 @@ def dict_mag(d):
 
 # lexical diversity is a measure of how many different words are in the text
 def lexical_diversity(text):
-    
+
     # tokenize the file and split it into its POS tuples
     tokenizer = RegexpTokenizer(r'\w+')
     words = tokenizer.tokenize(text)
@@ -65,7 +67,7 @@ def lexical_diversity(text):
 
     # get a count of how many unique words there are
     # divide this number by the total number of words to get the
-    # percentage of unique words compared to the entire document 
+    # percentage of unique words compared to the entire document
     relative_unique_words = len(set(words)) / len(words)
 
     return relative_unique_words
@@ -74,15 +76,15 @@ def lexical_diversity(text):
 def diversity_analysis(training_book, unknown_book):
     print("")
 
-# sentence length 
+# sentence length
 
-# creates bigrams of words 
+# creates bigrams of words
 def word_bigram_frequencies():
 
     data_stats = {}
 
     # go through each file and great a relative frequency dictionary
-    # of all of the parts of speech bigrams 
+    # of all of the parts of speech bigrams
     for filename in glob.glob('books/*.txt'):
         f = open(filename, 'r', encoding='utf8')
 
@@ -91,19 +93,19 @@ def word_bigram_frequencies():
 
         # Extracting core content - removing metadata
         text = remove_book_metadata(text);
-        
+
         # tokenize the file
         tokenizer = RegexpTokenizer(r'\w+')
         words = tokenizer.tokenize(text)
-    
+
         # create bigrams
         # get bigrams of the parts of speech
         word_bigrams = set(nltk.bigrams(words))
-        
+
         # get the number of bigrams in the file so you can find RELATIVE freq
         num_bigrams = len(word_bigrams)
 
-        # relative freqency of each bigram 
+        # relative freqency of each bigram
         word_bigrams = dict(Counter(word_bigrams))
         for bigram in word_bigrams:
             word_bigrams[bigram] /= num_bigrams
@@ -112,7 +114,7 @@ def word_bigram_frequencies():
         if filename not in data_stats:
             data_stats[filename] = word_bigrams;
         else:
-            print("Error: same file name! " + filename) 
+            print("Error: same file name! " + filename)
 
     return data_stats
 
@@ -121,11 +123,11 @@ def word_bigram_frequencies():
 def pos_bigram_frequencies():
 
     data_stats = {}
-    
+
     # go through each file and great a relative frequency dictionary
-    # of all of the parts of speech bigrams 
+    # of all of the parts of speech bigrams
     for filename in glob.glob('books/*.txt'):
-        
+
         f = open(filename, 'r', encoding='utf8')
 
         # Read the file
@@ -144,27 +146,27 @@ def pos_bigram_frequencies():
             print("Error: same file name! " + filename)
 
     return data_stats
-    
 
-# create realtive frequencies for bigram lists 
+
+# create realtive frequencies for bigram lists
 def relative_pos_bigram_freq(text):
     # tokenize the file and split it into its POS tuples
     tokenizer = RegexpTokenizer(r'\w+')
     text = tokenizer.tokenize(text)
     pos_tuples = nltk.pos_tag(text)
-        
+
     # get only the parts of speech
-    pos_bigrams = list()    
+    pos_bigrams = list()
     for word,pos in pos_tuples:
         pos_bigrams.append(pos)
 
     # get bigrams of the parts of speech
     pos_bigrams = set(nltk.bigrams(pos_bigrams))
-    
+
     # get the number of bigrams in the file so you can find RELATIVE freq
     num_bigrams = len(pos_bigrams)
 
-    # relative freqency of each bigram 
+    # relative freqency of each bigram
     pos_bigrams = dict(Counter(pos_bigrams))
     for bigram in pos_bigrams:
         pos_bigrams[bigram] /= num_bigrams
@@ -175,7 +177,7 @@ def relative_pos_bigram_freq(text):
 # between the two vectors as the closeness. Smaller the angle, closer
 # the documents.
 def cosine_similarity(d1, d2):
-    
+
     dot_product = 0
     all_words = set().union(d1.keys(), d2.keys())
 
@@ -196,7 +198,7 @@ def cosine_based_closeness(data_stats, test_word_freq):
 
     filename_angle_map = {}
 
-    # For a given corpus file, 
+    # For a given corpus file,
     # traverse through all words of test file
     for data_filename in data_stats:
         # Compare the angle between the current test file, and
@@ -221,7 +223,7 @@ def cosine_based_closeness(data_stats, test_word_freq):
     print(" ")
 
 def detect_author_bigram_freq(word_data_stats, pos_data_stats, test_name):
-    
+
     # go through each unknown document and get its relative bigram frequency
     for test_filename in glob.glob(test_name):
         f = open(test_filename, 'r', encoding='utf8')
@@ -231,7 +233,7 @@ def detect_author_bigram_freq(word_data_stats, pos_data_stats, test_name):
 
         # Extracting core content - removing metadata
         text = remove_book_metadata(text);
-        
+
         # get the relative bigram frequency for POS
         pos_bigram_freq = relative_pos_bigram_freq(text)
 
@@ -239,21 +241,21 @@ def detect_author_bigram_freq(word_data_stats, pos_data_stats, test_name):
         # tokenize the file
         tokenizer = RegexpTokenizer(r'\w+')
         words = tokenizer.tokenize(text)
-    
+
         # create bigrams
         # get bigrams of the parts of speech
         word_bigrams = set(nltk.bigrams(words))
-        
+
         # get the number of bigrams in the file so you can find RELATIVE freq
         num_bigrams = len(word_bigrams)
 
-        # relative freqency of each bigram 
+        # relative freqency of each bigram
         word_bigrams = dict(Counter(word_bigrams))
         for bigram in word_bigrams:
             word_bigrams[bigram] /= num_bigrams
 
         print("Estimate based on POS bigrams")
-        # get the cosine angle between POS bigrams and the training data 
+        # get the cosine angle between POS bigrams and the training data
         cosine_based_closeness(pos_data_stats, pos_bigram_freq)
         print(" ")
         print("Estimate based on word bigrams")
@@ -277,11 +279,11 @@ def detect_author_lexical_diversity(unknown_book):
 
         # figure out which text most closely matches based on lexical diversity
         lexical_based_closeness(diversity)
-    
+
 
 def lexical_based_closeness(unknown_book):
     data_stats = {}
-    
+
     # go through each book in the training set and get its lexical diversity
     for filename in glob.glob('books/*.txt'):
         f = open(filename, 'r', encoding='utf8')
@@ -314,10 +316,10 @@ def lexical_based_closeness(unknown_book):
     # lexical diversity
     print("Stats for closest match (lexical diversity) (best to worst match): ");
     for index, filename in enumerate(error_sorted):
-        print("Rank: " + str(index + 1) + ", File name: " + filename[0]);        
+        print("Rank: " + str(index + 1) + ", File name: " + filename[0]);
 
 # Method that starts the program
-def main():
+if __name__ == "__main__":
     # get this here so you don't have to keep doing it for each book
     # it's super slow and only needs to be calculated once
     pos_bigrams = pos_bigram_frequencies()
@@ -331,14 +333,3 @@ def main():
         print("Currently testing file: " + test_filename);
         detect_author_bigram_freq(word_bigrams, pos_bigrams, test_filename)
         detect_author_lexical_diversity(test_filename)
-
-        
-main()
-    
-        
-
-    
-
-
-
-    
