@@ -18,7 +18,7 @@ def remove_book_metadata(text):
     re_start = re.search(r'\*\*\*\s?START.*\*\*\*', text)
     re_end = re.search(r'\*\*\*\s?END.*\*\*\*', text)
     core_text = text[re_start.span()[1] : re_end.span()[0]-1].strip()
-    
+
     return core_text;
 
 
@@ -26,7 +26,7 @@ def remove_book_metadata(text):
 def get_word_freq(words):
     return dict(Counter(words));
 
-# Filteration method 
+# Filteration method
 # Portable based on filter required
 
 # TODO
@@ -84,7 +84,7 @@ def train_data_word_freq():
     return data_stats;
 
 # Measuring how many times a word was exactly used. Identical frequencies
-# is critical in this. A giving a percentage of success. 
+# is critical in this. A giving a percentage of success.
 # This method is more discrete in that, we consider it to be a success
 # or failure imemdiately based on a certain condition (if the counts are
 # exact)
@@ -97,7 +97,7 @@ def success_based_closeness(data_stats, test_word_freq):
 
     test_file_num_words = len(test_word_freq);
     success = 0;
-    # For a given corpus file, 
+    # For a given corpus file,
     # traverse through all words of test file
     for data_filename in data_stats:
 
@@ -115,7 +115,7 @@ def success_based_closeness(data_stats, test_word_freq):
     # After accumulating all the errors.
     # Need to find min error and get corresponding filename
     # This filename is the closest match
-    num_training_files = len(data_stats);   
+    num_training_files = len(data_stats);
 
     # Returns a tuple of sorted file names based on percentage of closeness
     # In descending order
@@ -128,17 +128,17 @@ def success_based_closeness(data_stats, test_word_freq):
         # auth_name = get_author_name(f.read());
         # print (auth_name + " " + str(filename[1]))
         print("Percentage of closeness: " + str(filename[1]) + "%, File name: " + filename[0]);
-    
-# Measuring count differences (squared errors) and put them in ascending 
+
+# Measuring count differences (squared errors) and put them in ascending
 # order. In other words, best to worst match
 # This method is less structured and is more flexibile in the sense that we
-# consider closeness by just measuring difference rather ruling something 
+# consider closeness by just measuring difference rather ruling something
 # out because it was not exact
 def error_based_closeness(data_stats, test_word_freq):
 
     filename_error_map = {};
 
-    # For a given corpus file, 
+    # For a given corpus file,
     # traverse through all words of test file
     for data_filename in data_stats:
 
@@ -199,7 +199,7 @@ def cosine_based_closeness(data_stats, test_word_freq):
 
     filename_angle_map = {}
 
-    # For a given corpus file, 
+    # For a given corpus file,
     # traverse through all words of test file
     for data_filename in data_stats:
         # Compare the angle between the current test file, and
@@ -231,15 +231,15 @@ def cosine_based_closeness(data_stats, test_word_freq):
 # of measuring closeness
 
 # 1) Measuring how many times a word was exactly used. Identical frequencies
-# is critical in this. A giving a percentage of success. 
+# is critical in this. A giving a percentage of success.
 # This method is more discrete in that, we consider it to be a success
 # or failre immedaitely based on a certain condition (if the counts are
 # exact)
 
-# 2) Measuring count differences (squared errors) and put them in ascending 
+# 2) Measuring count differences (squared errors) and put them in ascending
 # order. In other words, best to worst match
 # This method is less structured and is more flexibile in the sense that we
-# consider closeness by just measuring difference rather ruling something 
+# consider closeness by just measuring difference rather ruling something
 # out because it was not exact
 
 # 3) Measuring the angle between the two vectors of word frequencies,
@@ -247,7 +247,7 @@ def cosine_based_closeness(data_stats, test_word_freq):
 # account for different document sizes.
 def detect_author_word_freq(data_stats, test_name):
 
-    for test_filename in glob.glob(test_name):    
+    for test_filename in glob.glob(test_name):
         f = open(test_filename, 'r', encoding='utf8')
 
         # Read the file
@@ -290,7 +290,7 @@ def detect_author_word_freq(data_stats, test_name):
         cosine_based_closeness(data_stats, test_word_freq)
 
 # Method that starts the program
-def main():
+if __name__ == "__main__":
 
     # Dictionary of filename to frequencies
     # After training data
@@ -299,9 +299,5 @@ def main():
     # Testing all files in the test_data directory
     for test_filename in glob.glob('test_data/*.txt'):
         print(" ");
-        print("Currently testing file: " + test_filename); 
+        print("Currently testing file: " + test_filename);
         detect_author_word_freq(data_stats, test_filename);
-
-main();
-
-    
