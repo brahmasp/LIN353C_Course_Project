@@ -12,6 +12,7 @@ import math
 import re
 import operator
 
+from word_freq_impl import cosine_similarity, remove_book_metadata, filter_words, get_word_freq
 
 # Global data of the training examples
 filename_list = [];
@@ -19,52 +20,6 @@ filename_list = [];
 # Dictionary of filename to word_freq map
 word_counts = {};
 
-
-# Method to remove top and bottom metadata info from corpus
-def remove_book_metadata(text):
-	re_start = re.search(r'\*\*\*\s?START.*\*\*\*', text)
-	re_end = re.search(r'\*\*\*\s?END.*\*\*\*', text)
-	core_text = text[re_start.span()[1] : re_end.span()[0]-1].strip()
-
-	return core_text;
-
-# TODO
-# TEMP: hardcoded to include alphanumeric and apostrophe
-def filter_words(words, filter):
-
-	for index, word in enumerate(words):
-		words[index] = re.sub(r"[^\w']+", "", word, flags=re.UNICODE);
-
-# Method to get word to frequency map
-def get_word_freq(words):
-	return dict(Counter(words));
-
-def cosine_similarity (d1, d2):
-
-	dot_product = 0
-	all_words = set().union(d1.keys(), d2.keys())
-
-	# Calculate the numerator (the dot product)
-	for i in all_words:
-		# The second argument in `get` is a default value; i.e. if `i`
-		# doesn't exist in the dict, then return 0
-		dot_product += d1.get(i, 0) * d2.get(i, 0)
-
-	# Calculate magnitudes of the two vectors
-	d1_mag = dict_mag(d1)
-	d2_mag = dict_mag(d2)
-
-	# Take the inverse cosine based on the dot product formula
-	return math.acos(dot_product / (d1_mag * d2_mag))
-
-def dict_mag(d):
-	ret = 0
-
-	# Add the squares of each element
-	for i in d.values():
-		ret += i**2
-
-	return math.sqrt(ret)
 
 def check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename):
 
@@ -114,8 +69,6 @@ def check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename):
 # Two cases
 # 1. name_list with training data names and their corresponding counts
 # 2. name_list with only test data and its corresponding counts
-
-
 def get_tfidf_map(name_list, word_counts_per_file):
 
 	tfidf_map = {};
