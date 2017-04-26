@@ -161,8 +161,7 @@ def lexical_based_closeness(unknown_book):
     for index, filename in enumerate(error_sorted):
         print("Rank: " + str(index + 1) + ", File name: " + filename[0]);
 
-# Method that starts the program
-if __name__ == "__main__":
+def main():
     # get this here so you don't have to keep doing it for each book
     # it's super slow and only needs to be calculated once
     pos_bigrams = pos_bigram_frequencies()
@@ -176,3 +175,8 @@ if __name__ == "__main__":
         print("Currently testing file: " + test_filename);
         detect_author_bigram_freq(word_bigrams, pos_bigrams, test_filename)
         # detect_author_lexical_diversity(test_filename)
+
+        
+# Method that starts the program
+if __name__ == "__main__":
+    main();

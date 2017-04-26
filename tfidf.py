@@ -230,9 +230,7 @@ def detect_author_word_freq(tfidf_map, test_name):
 		check_tfidf_closeness(tfidf_map, test_tfidf_map, test_filename);
 
 
-
-
-if __name__ == "__main__":
+def main():
 	# Get tfidf for all words
 	# sort list of tfidf stats and their corresponding word
 
@@ -265,4 +263,7 @@ if __name__ == "__main__":
 		print(" ");
 		print("Currently testing file: " + test_filename);
 		detect_author_word_freq(tfidf_map, test_filename);
+
+if __name__ == "__main__":
+	main();
 
