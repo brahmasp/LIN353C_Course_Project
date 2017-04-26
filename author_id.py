@@ -1,3 +1,11 @@
+'''
+Main program to run author identification on files with algorithms
+-> TFIDF
+-> POS bigrams
+-> word bigrams
+-> word counts
+
+'''
 import tfidf
 import lilianas_portion
 import word_freq_impl
