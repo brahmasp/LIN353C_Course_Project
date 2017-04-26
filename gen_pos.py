@@ -5,6 +5,7 @@ import math
 import re
 import operator
 import json
+import codecs
 from nltk.corpus import brown
 from nltk.tokenize import RegexpTokenizer
 from word_freq_impl import remove_book_metadata, dict_mag, cosine_similarity, cosine_based_closeness
@@ -26,10 +27,17 @@ def gen_pos(filename):
 
     return pos_tuples
 
-def write_pos_csv(tuples, outfile):
+def write_pos(tuples, outfile):
     print("Writing to file",outfile)
-    with open(outfile, 'w') as f:
-        f.write(json.dumps(tuples))
+    with open(outfile, 'w', encoding='utf8') as f:
+        # f.write(json.dumps(tuples))
+        json.dump(tuples, f, ensure_ascii=False)
+
+def load_pos(infile, is_txt=True):
+    if is_txt:
+        infile = re.sub(r'\.txt$',"_pos.json",infile)
+    with open(infile, 'r', encoding='utf8') as f:
+        return json.loads(f.read(), encoding='UTF-8')
 
 if __name__ == "__main__":
     import sys
@@ -37,4 +45,4 @@ if __name__ == "__main__":
         print("Need file to generate with", sys.stderr)
 
     # print(sys.getsizeof(gen_pos(sys.argv[1])))
-    write_pos_csv(gen_pos(sys.argv[1]), re.sub(r'\.txt$',"_pos.json",sys.argv[1]))
+    write_pos(gen_pos(sys.argv[1]), re.sub(r'\.txt$',"_pos.json",sys.argv[1]))
