@@ -39,7 +39,8 @@ def load_pos(infile, is_txt=True):
     if is_txt:
         infile = re.sub(r'\.txt$',"_pos.json",infile)
     with open(infile, 'r', encoding='utf8') as f:
-        return json.loads(f.read(), encoding='UTF-8')
+        l = json.loads(f.read(), encoding='UTF-8')
+        return list((x[0],x[1]) for x in l)
 
 if __name__ == "__main__":
     import sys
