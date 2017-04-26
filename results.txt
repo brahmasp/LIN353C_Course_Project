@@ -1,0 +1,1182 @@
+ 
+Beginning TFIDF
+ 
+Currently testing file: test_data/Arthur_Doyle_Wisteria.txt
+Rank: 1 file name: books/Arthur_Doyle_2.txt
+Rank: 2 file name: books/Arthur_Doyle_1.txt
+Rank: 3 file name: books/Arthur_Doyle_3.txt
+Rank: 4 file name: books/Donnell_Animal_Ghost.txt
+Rank: 5 file name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 6 file name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 7 file name: books/Antsey_3.txt
+Rank: 8 file name: books/Wells_The War of the Worlds.txt
+Rank: 9 file name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 10 file name: books/Fletcher_1.txt
+Rank: 11 file name: books/Bramah_Max_Carrados.txt
+Rank: 12 file name: books/Fletcher_2.txt
+Rank: 13 file name: books/Antsey_2.txt
+Rank: 14 file name: books/Wells_The First Men on the Moon.txt
+Rank: 15 file name: books/Anstey_1.txt
+Rank: 16 file name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 17 file name: books/James_Cabell_1.txt
+Rank: 18 file name: books/James_Cabell_3.txt
+Rank: 19 file name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 20 file name: books/Donnell_The_Sorcery_Club.txt
+Rank: 21 file name: books/Frank_Baum_3.txt
+Rank: 22 file name: books/Frank_Baum_4.txt
+Rank: 23 file name: books/Frank_Baum_2.txt
+Rank: 24 file name: books/Frank_Baum_1.txt
+Rank: 25 file name: books/Zane Grey_The UP Trail.txt
+Rank: 26 file name: books/Will_Morris_3.txt
+Rank: 27 file name: books/Will_Morris_2.txt
+Rank: 28 file name: books/James_Cabell_2.txt
+Rank: 29 file name: books/Marietta_Holly_1.txt
+Rank: 30 file name: books/Will_Morris_1.txt
+ 
+Currently testing file: test_data/Bramah_Kai_Lung_Golden_Hours.txt
+Rank: 1 file name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 2 file name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 3 file name: books/Donnell_Animal_Ghost.txt
+Rank: 4 file name: books/Will_Morris_3.txt
+Rank: 5 file name: books/Arthur_Doyle_1.txt
+Rank: 6 file name: books/Wells_The War of the Worlds.txt
+Rank: 7 file name: books/James_Cabell_3.txt
+Rank: 8 file name: books/Wells_The First Men on the Moon.txt
+Rank: 9 file name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 10 file name: books/Arthur_Doyle_2.txt
+Rank: 11 file name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 12 file name: books/Will_Morris_2.txt
+Rank: 13 file name: books/Antsey_2.txt
+Rank: 14 file name: books/Bramah_Max_Carrados.txt
+Rank: 15 file name: books/Frank_Baum_3.txt
+Rank: 16 file name: books/Arthur_Doyle_3.txt
+Rank: 17 file name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 18 file name: books/Anstey_1.txt
+Rank: 19 file name: books/Frank_Baum_4.txt
+Rank: 20 file name: books/Frank_Baum_2.txt
+Rank: 21 file name: books/Frank_Baum_1.txt
+Rank: 22 file name: books/Donnell_The_Sorcery_Club.txt
+Rank: 23 file name: books/James_Cabell_1.txt
+Rank: 24 file name: books/Antsey_3.txt
+Rank: 25 file name: books/Will_Morris_1.txt
+Rank: 26 file name: books/James_Cabell_2.txt
+Rank: 27 file name: books/Zane Grey_The UP Trail.txt
+Rank: 28 file name: books/Fletcher_1.txt
+Rank: 29 file name: books/Fletcher_2.txt
+Rank: 30 file name: books/Marietta_Holly_1.txt
+ 
+Currently testing file: test_data/Donnell_Ghost_Stories.txt
+Rank: 1 file name: books/Donnell_Animal_Ghost.txt
+Rank: 2 file name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 3 file name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 4 file name: books/Wells_The War of the Worlds.txt
+Rank: 5 file name: books/Arthur_Doyle_2.txt
+Rank: 6 file name: books/Donnell_The_Sorcery_Club.txt
+Rank: 7 file name: books/Arthur_Doyle_1.txt
+Rank: 8 file name: books/James_Cabell_1.txt
+Rank: 9 file name: books/Wells_The First Men on the Moon.txt
+Rank: 10 file name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 11 file name: books/Arthur_Doyle_3.txt
+Rank: 12 file name: books/Antsey_3.txt
+Rank: 13 file name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 14 file name: books/James_Cabell_3.txt
+Rank: 15 file name: books/Fletcher_1.txt
+Rank: 16 file name: books/Antsey_2.txt
+Rank: 17 file name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 18 file name: books/Frank_Baum_3.txt
+Rank: 19 file name: books/Anstey_1.txt
+Rank: 20 file name: books/Bramah_Max_Carrados.txt
+Rank: 21 file name: books/Will_Morris_3.txt
+Rank: 22 file name: books/Fletcher_2.txt
+Rank: 23 file name: books/Frank_Baum_2.txt
+Rank: 24 file name: books/Frank_Baum_1.txt
+Rank: 25 file name: books/Frank_Baum_4.txt
+Rank: 26 file name: books/Will_Morris_2.txt
+Rank: 27 file name: books/Zane Grey_The UP Trail.txt
+Rank: 28 file name: books/Will_Morris_1.txt
+Rank: 29 file name: books/Marietta_Holly_1.txt
+Rank: 30 file name: books/James_Cabell_2.txt
+ 
+Currently testing file: test_data/Fletcher_Middle_Temple.txt
+Rank: 1 file name: books/Donnell_Animal_Ghost.txt
+Rank: 2 file name: books/Fletcher_1.txt
+Rank: 3 file name: books/Fletcher_2.txt
+Rank: 4 file name: books/Anstey_1.txt
+Rank: 5 file name: books/Arthur_Doyle_2.txt
+Rank: 6 file name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 7 file name: books/Arthur_Doyle_1.txt
+Rank: 8 file name: books/Donnell_The_Sorcery_Club.txt
+Rank: 9 file name: books/Bramah_Max_Carrados.txt
+Rank: 10 file name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 11 file name: books/James_Cabell_1.txt
+Rank: 12 file name: books/Antsey_3.txt
+Rank: 13 file name: books/Antsey_2.txt
+Rank: 14 file name: books/Arthur_Doyle_3.txt
+Rank: 15 file name: books/Wells_The War of the Worlds.txt
+Rank: 16 file name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 17 file name: books/Frank_Baum_3.txt
+Rank: 18 file name: books/James_Cabell_3.txt
+Rank: 19 file name: books/Wells_The First Men on the Moon.txt
+Rank: 20 file name: books/Frank_Baum_2.txt
+Rank: 21 file name: books/Frank_Baum_1.txt
+Rank: 22 file name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 23 file name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 24 file name: books/Frank_Baum_4.txt
+Rank: 25 file name: books/Will_Morris_3.txt
+Rank: 26 file name: books/Zane Grey_The UP Trail.txt
+Rank: 27 file name: books/Marietta_Holly_1.txt
+Rank: 28 file name: books/Will_Morris_2.txt
+Rank: 29 file name: books/James_Cabell_2.txt
+Rank: 30 file name: books/Will_Morris_1.txt
+ 
+Currently testing file: test_data/Marietta_Holly_Vol_6.txt
+Rank: 1 file name: books/Marietta_Holly_1.txt
+Rank: 2 file name: books/Zane Grey_The UP Trail.txt
+Rank: 3 file name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 4 file name: books/Anstey_1.txt
+Rank: 5 file name: books/Donnell_Animal_Ghost.txt
+Rank: 6 file name: books/Frank_Baum_2.txt
+Rank: 7 file name: books/James_Cabell_1.txt
+Rank: 8 file name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 9 file name: books/Arthur_Doyle_1.txt
+Rank: 10 file name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 11 file name: books/Arthur_Doyle_2.txt
+Rank: 12 file name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 13 file name: books/Wells_The War of the Worlds.txt
+Rank: 14 file name: books/James_Cabell_3.txt
+Rank: 15 file name: books/Antsey_2.txt
+Rank: 16 file name: books/Antsey_3.txt
+Rank: 17 file name: books/Frank_Baum_3.txt
+Rank: 18 file name: books/Donnell_The_Sorcery_Club.txt
+Rank: 19 file name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 20 file name: books/Frank_Baum_1.txt
+Rank: 21 file name: books/Wells_The First Men on the Moon.txt
+Rank: 22 file name: books/James_Cabell_2.txt
+Rank: 23 file name: books/Fletcher_2.txt
+Rank: 24 file name: books/Fletcher_1.txt
+Rank: 25 file name: books/Will_Morris_3.txt
+Rank: 26 file name: books/Frank_Baum_4.txt
+Rank: 27 file name: books/Arthur_Doyle_3.txt
+Rank: 28 file name: books/Bramah_Max_Carrados.txt
+Rank: 29 file name: books/Will_Morris_2.txt
+Rank: 30 file name: books/Will_Morris_1.txt
+ 
+Currently testing file: test_data/Wells_Invisible_Man.txt
+Rank: 1 file name: books/Donnell_Animal_Ghost.txt
+Rank: 2 file name: books/Wells_The War of the Worlds.txt
+Rank: 3 file name: books/Wells_The First Men on the Moon.txt
+Rank: 4 file name: books/Arthur_Doyle_2.txt
+Rank: 5 file name: books/Fletcher_1.txt
+Rank: 6 file name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 7 file name: books/Arthur_Doyle_3.txt
+Rank: 8 file name: books/Arthur_Doyle_1.txt
+Rank: 9 file name: books/Anstey_1.txt
+Rank: 10 file name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 11 file name: books/Antsey_2.txt
+Rank: 12 file name: books/James_Cabell_1.txt
+Rank: 13 file name: books/Bramah_Max_Carrados.txt
+Rank: 14 file name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 15 file name: books/Fletcher_2.txt
+Rank: 16 file name: books/Antsey_3.txt
+Rank: 17 file name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 18 file name: books/Donnell_The_Sorcery_Club.txt
+Rank: 19 file name: books/Frank_Baum_3.txt
+Rank: 20 file name: books/Frank_Baum_1.txt
+Rank: 21 file name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 22 file name: books/Frank_Baum_2.txt
+Rank: 23 file name: books/Frank_Baum_4.txt
+Rank: 24 file name: books/Marietta_Holly_1.txt
+Rank: 25 file name: books/James_Cabell_3.txt
+Rank: 26 file name: books/Will_Morris_3.txt
+Rank: 27 file name: books/Zane Grey_The UP Trail.txt
+Rank: 28 file name: books/Will_Morris_2.txt
+Rank: 29 file name: books/James_Cabell_2.txt
+Rank: 30 file name: books/Will_Morris_1.txt
+ 
+Beginning POS Bigram
+ 
+Currently testing file: test_data/Arthur_Doyle_Wisteria.txt
+Estimate based on POS bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.06050003504205658 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 2 (0.07833077059360044 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 3 (0.11187487936255242 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 4 (0.15336037337695343 rad), File name: books/Antsey_3.txt
+Rank: 5 (0.15760020311560718 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 6 (0.18556061321106468 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 7 (0.20981872348566366 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 8 (0.21310477109950057 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 9 (0.2168177191291552 rad), File name: books/Fletcher_1.txt
+Rank: 10 (0.2241837041701224 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 11 (0.2363289697445385 rad), File name: books/James_Cabell_3.txt
+Rank: 12 (0.2467881539882998 rad), File name: books/James_Cabell_1.txt
+Rank: 13 (0.253040034065348 rad), File name: books/Frank_Baum_2.txt
+Rank: 14 (0.254046840228406 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 15 (0.25843654590830445 rad), File name: books/James_Cabell_2.txt
+Rank: 16 (0.2604863097979534 rad), File name: books/Frank_Baum_1.txt
+Rank: 17 (0.26120110370860694 rad), File name: books/Fletcher_2.txt
+Rank: 18 (0.2623985170746682 rad), File name: books/Anstey_1.txt
+Rank: 19 (0.26763794868180707 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 20 (0.2795470718382881 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 21 (0.2847049678089844 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 22 (0.2899818262828925 rad), File name: books/Will_Morris_3.txt
+Rank: 23 (0.2937074377518317 rad), File name: books/Will_Morris_2.txt
+Rank: 24 (0.3281050252886936 rad), File name: books/Antsey_2.txt
+Rank: 25 (0.33789076680016944 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 26 (0.3429958811650327 rad), File name: books/Marietta_Holly_1.txt
+Rank: 27 (0.35546098367117746 rad), File name: books/Frank_Baum_4.txt
+Rank: 28 (0.362337509696975 rad), File name: books/Frank_Baum_3.txt
+Rank: 29 (0.3727337336207727 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 30 (0.39698590567196707 rad), File name: books/Will_Morris_1.txt
+ 
+Estimate based on word bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.4503252770880029 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 2 (0.4938614114518233 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 3 (0.5077849716419944 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 4 (0.5993119631291999 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 5 (0.61217286210063 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 6 (0.6278324273387278 rad), File name: books/Antsey_3.txt
+Rank: 7 (0.6768990431724928 rad), File name: books/James_Cabell_3.txt
+Rank: 8 (0.6820816443469021 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 9 (0.6884121708763076 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 10 (0.7035808511760102 rad), File name: books/James_Cabell_2.txt
+Rank: 11 (0.7103461520048985 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 12 (0.711074417725263 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 13 (0.7295304556776249 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 14 (0.7374094405163836 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 15 (0.776275908278723 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 16 (0.7868999347960298 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 17 (0.7915804913379205 rad), File name: books/Fletcher_1.txt
+Rank: 18 (0.7961451268901949 rad), File name: books/Antsey_2.txt
+Rank: 19 (0.8237409191083109 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 20 (0.8238412109857461 rad), File name: books/Frank_Baum_2.txt
+Rank: 21 (0.8240671325783983 rad), File name: books/Fletcher_2.txt
+Rank: 22 (0.8241466640074556 rad), File name: books/Frank_Baum_1.txt
+Rank: 23 (0.8305834964622949 rad), File name: books/James_Cabell_1.txt
+Rank: 24 (0.8325599437290391 rad), File name: books/Will_Morris_3.txt
+Rank: 25 (0.8385264136611313 rad), File name: books/Will_Morris_2.txt
+Rank: 26 (0.8624439830487098 rad), File name: books/Frank_Baum_3.txt
+Rank: 27 (0.8653682509157146 rad), File name: books/Will_Morris_1.txt
+Rank: 28 (0.8672963485714854 rad), File name: books/Anstey_1.txt
+Rank: 29 (0.9069063939573374 rad), File name: books/Frank_Baum_4.txt
+Rank: 30 (1.0705439512469606 rad), File name: books/Marietta_Holly_1.txt
+ 
+Currently testing file: test_data/Bramah_Kai_Lung_Golden_Hours.txt
+Estimate based on POS bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.14322204880316317 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 2 (0.1435282631385457 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 3 (0.23989844517650719 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 4 (0.27259601304496733 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 5 (0.2921381962747817 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 6 (0.2926088886266324 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 7 (0.3069333185599898 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 8 (0.30998178345627353 rad), File name: books/James_Cabell_2.txt
+Rank: 9 (0.3156054455369747 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 10 (0.31766067888990346 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 11 (0.317877498686118 rad), File name: books/Antsey_3.txt
+Rank: 12 (0.3213742697532252 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 13 (0.3325377790088276 rad), File name: books/James_Cabell_3.txt
+Rank: 14 (0.35468587779415817 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 15 (0.36071884571655227 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 16 (0.36720863278173815 rad), File name: books/Frank_Baum_2.txt
+Rank: 17 (0.37149279198187013 rad), File name: books/Frank_Baum_1.txt
+Rank: 18 (0.38436540908159683 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 19 (0.4027387150412618 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 20 (0.4104686499179223 rad), File name: books/Frank_Baum_4.txt
+Rank: 21 (0.43126704726381293 rad), File name: books/James_Cabell_1.txt
+Rank: 22 (0.4365422416801105 rad), File name: books/Fletcher_2.txt
+Rank: 23 (0.4466557040083331 rad), File name: books/Marietta_Holly_1.txt
+Rank: 24 (0.4631602459061293 rad), File name: books/Will_Morris_3.txt
+Rank: 25 (0.46764163515432783 rad), File name: books/Fletcher_1.txt
+Rank: 26 (0.4677626359915842 rad), File name: books/Will_Morris_2.txt
+Rank: 27 (0.4695920525547962 rad), File name: books/Will_Morris_1.txt
+Rank: 28 (0.48830543619159417 rad), File name: books/Frank_Baum_3.txt
+Rank: 29 (0.5241667078080341 rad), File name: books/Antsey_2.txt
+Rank: 30 (0.5250374305241384 rad), File name: books/Anstey_1.txt
+ 
+Estimate based on word bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.4945394632615124 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 2 (0.5093998620458177 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 3 (0.6797942575926315 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 4 (0.7086234532215596 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 5 (0.733421784215208 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 6 (0.7700209492931308 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 7 (0.7706436993111523 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 8 (0.7805351201499303 rad), File name: books/Antsey_3.txt
+Rank: 9 (0.7842937133467339 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 10 (0.7846250789141344 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 11 (0.7846629904662603 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 12 (0.7862626864679004 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 13 (0.8307220072956638 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 14 (0.8353346173332522 rad), File name: books/James_Cabell_2.txt
+Rank: 15 (0.8454857294540084 rad), File name: books/Frank_Baum_1.txt
+Rank: 16 (0.8461455152143443 rad), File name: books/Frank_Baum_2.txt
+Rank: 17 (0.850392597781309 rad), File name: books/James_Cabell_3.txt
+Rank: 18 (0.8830367681359991 rad), File name: books/Will_Morris_3.txt
+Rank: 19 (0.8976640965578744 rad), File name: books/Will_Morris_2.txt
+Rank: 20 (0.9086700716500039 rad), File name: books/Will_Morris_1.txt
+Rank: 21 (0.9174375655957062 rad), File name: books/Frank_Baum_4.txt
+Rank: 22 (0.9179288853699796 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 23 (0.9266165918834848 rad), File name: books/Frank_Baum_3.txt
+Rank: 24 (0.9525331388137367 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 25 (0.95260124361037 rad), File name: books/Antsey_2.txt
+Rank: 26 (0.9700712597118154 rad), File name: books/Fletcher_2.txt
+Rank: 27 (0.9981932260145779 rad), File name: books/James_Cabell_1.txt
+Rank: 28 (1.0252670672541355 rad), File name: books/Fletcher_1.txt
+Rank: 29 (1.0508654701525417 rad), File name: books/Anstey_1.txt
+Rank: 30 (1.1201751979228642 rad), File name: books/Marietta_Holly_1.txt
+ 
+Currently testing file: test_data/Donnell_Ghost_Stories.txt
+Estimate based on POS bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.11455408717278491 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 2 (0.16096766045350955 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 3 (0.17317087888485597 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 4 (0.18180552631505634 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 5 (0.19352508668045493 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 6 (0.21954757731189328 rad), File name: books/Antsey_3.txt
+Rank: 7 (0.22707616468124292 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 8 (0.2340810305911139 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 9 (0.24050712285138962 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 10 (0.25014557260132114 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 11 (0.26544915055439455 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 12 (0.27652961407410415 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 13 (0.2829132415960004 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 14 (0.29192956639399803 rad), File name: books/Frank_Baum_2.txt
+Rank: 15 (0.2951804757557498 rad), File name: books/James_Cabell_3.txt
+Rank: 16 (0.2960008863197018 rad), File name: books/Fletcher_1.txt
+Rank: 17 (0.2986476497127968 rad), File name: books/Frank_Baum_1.txt
+Rank: 18 (0.30375172689058233 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 19 (0.3242923452931496 rad), File name: books/Will_Morris_3.txt
+Rank: 20 (0.32531694983130344 rad), File name: books/James_Cabell_2.txt
+Rank: 21 (0.3267080611805288 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 22 (0.3274084811681638 rad), File name: books/Will_Morris_2.txt
+Rank: 23 (0.3335510610614442 rad), File name: books/Fletcher_2.txt
+Rank: 24 (0.350316723795399 rad), File name: books/James_Cabell_1.txt
+Rank: 25 (0.3905308358228997 rad), File name: books/Frank_Baum_4.txt
+Rank: 26 (0.39268118231220084 rad), File name: books/Marietta_Holly_1.txt
+Rank: 27 (0.3998496988253358 rad), File name: books/Will_Morris_1.txt
+Rank: 28 (0.4040819650405973 rad), File name: books/Anstey_1.txt
+Rank: 29 (0.42475490029702906 rad), File name: books/Frank_Baum_3.txt
+Rank: 30 (0.45127380508765713 rad), File name: books/Antsey_2.txt
+ 
+Estimate based on word bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.46952727241548337 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 2 (0.6047021722821502 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 3 (0.6750838521530735 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 4 (0.67704013961869 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 5 (0.6788560534867728 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 6 (0.6895161457618718 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 7 (0.7032163293343202 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 8 (0.7062082175497808 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 9 (0.7132994575265281 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 10 (0.7326102189787144 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 11 (0.7370789261892389 rad), File name: books/Antsey_3.txt
+Rank: 12 (0.7521721825996583 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 13 (0.7645861119584516 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 14 (0.7826700250997067 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 15 (0.7835117464531449 rad), File name: books/Will_Morris_2.txt
+Rank: 16 (0.8050252033698556 rad), File name: books/James_Cabell_3.txt
+Rank: 17 (0.8241777374772176 rad), File name: books/Frank_Baum_2.txt
+Rank: 18 (0.8242052646689041 rad), File name: books/Frank_Baum_1.txt
+Rank: 19 (0.8249812188365341 rad), File name: books/Will_Morris_3.txt
+Rank: 20 (0.8359237662739055 rad), File name: books/James_Cabell_2.txt
+Rank: 21 (0.866794849855407 rad), File name: books/Fletcher_1.txt
+Rank: 22 (0.8781075072533481 rad), File name: books/Antsey_2.txt
+Rank: 23 (0.8962877351020989 rad), File name: books/Frank_Baum_3.txt
+Rank: 24 (0.8978285581518819 rad), File name: books/James_Cabell_1.txt
+Rank: 25 (0.9008699965944736 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 26 (0.9115036499638856 rad), File name: books/Will_Morris_1.txt
+Rank: 27 (0.9227970187330086 rad), File name: books/Fletcher_2.txt
+Rank: 28 (0.9402820576247157 rad), File name: books/Frank_Baum_4.txt
+Rank: 29 (0.9583954131099158 rad), File name: books/Anstey_1.txt
+Rank: 30 (1.0795401512292786 rad), File name: books/Marietta_Holly_1.txt
+ 
+Currently testing file: test_data/Fletcher_Middle_Temple.txt
+Estimate based on POS bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.08551683449255627 rad), File name: books/Fletcher_2.txt
+Rank: 2 (0.17409086167453536 rad), File name: books/Fletcher_1.txt
+Rank: 3 (0.19083380774241315 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 4 (0.2006138746991841 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 5 (0.20686471765114164 rad), File name: books/James_Cabell_1.txt
+Rank: 6 (0.2094720460508489 rad), File name: books/Antsey_3.txt
+Rank: 7 (0.2128427616159935 rad), File name: books/James_Cabell_3.txt
+Rank: 8 (0.240566908726846 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 9 (0.24286533534680327 rad), File name: books/Anstey_1.txt
+Rank: 10 (0.24349314499879568 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 11 (0.25148038156015273 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 12 (0.2540630412884322 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 13 (0.26648560547433386 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 14 (0.2766460447964383 rad), File name: books/Frank_Baum_2.txt
+Rank: 15 (0.2880380569505431 rad), File name: books/Antsey_2.txt
+Rank: 16 (0.2885932249185192 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 17 (0.28920221677417346 rad), File name: books/Frank_Baum_3.txt
+Rank: 18 (0.2931210443007105 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 19 (0.2974858164869214 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 20 (0.3024797893846871 rad), File name: books/James_Cabell_2.txt
+Rank: 21 (0.3078278096572128 rad), File name: books/Frank_Baum_1.txt
+Rank: 22 (0.3315849227627817 rad), File name: books/Frank_Baum_4.txt
+Rank: 23 (0.3383297357461285 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 24 (0.34826464109791044 rad), File name: books/Marietta_Holly_1.txt
+Rank: 25 (0.3520280473137372 rad), File name: books/Will_Morris_2.txt
+Rank: 26 (0.3636615024988916 rad), File name: books/Will_Morris_1.txt
+Rank: 27 (0.37033467421622207 rad), File name: books/Will_Morris_3.txt
+Rank: 28 (0.3917201689832371 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 29 (0.4682430649668086 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 30 (0.48142991376952055 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+ 
+Estimate based on word bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.683831903375807 rad), File name: books/Fletcher_2.txt
+Rank: 2 (0.7032721467748638 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 3 (0.7266264854441004 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 4 (0.7405466147433191 rad), File name: books/Fletcher_1.txt
+Rank: 5 (0.7602881556407401 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 6 (0.7653095511509613 rad), File name: books/Antsey_3.txt
+Rank: 7 (0.7667317710467224 rad), File name: books/Anstey_1.txt
+Rank: 8 (0.7672277803210078 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 9 (0.7861127472609871 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 10 (0.7928047686816554 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 11 (0.7994097567907271 rad), File name: books/Antsey_2.txt
+Rank: 12 (0.816300739709491 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 13 (0.8370981464225057 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 14 (0.8577920231850215 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 15 (0.858533742471779 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 16 (0.858955307115692 rad), File name: books/James_Cabell_1.txt
+Rank: 17 (0.8918503468708818 rad), File name: books/Frank_Baum_2.txt
+Rank: 18 (0.8921627926100449 rad), File name: books/Frank_Baum_1.txt
+Rank: 19 (0.8978116143614377 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 20 (0.9015599819659409 rad), File name: books/James_Cabell_3.txt
+Rank: 21 (0.9017799948404089 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 22 (0.9018042848549015 rad), File name: books/Frank_Baum_3.txt
+Rank: 23 (0.9160256691169946 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 24 (0.9185321368879098 rad), File name: books/Will_Morris_1.txt
+Rank: 25 (0.9272051576320289 rad), File name: books/James_Cabell_2.txt
+Rank: 26 (0.9288137000128289 rad), File name: books/Will_Morris_3.txt
+Rank: 27 (0.9532179044774801 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 28 (0.9710755967373552 rad), File name: books/Will_Morris_2.txt
+Rank: 29 (0.9940643672601164 rad), File name: books/Frank_Baum_4.txt
+Rank: 30 (1.1126714442168673 rad), File name: books/Marietta_Holly_1.txt
+ 
+Currently testing file: test_data/Marietta_Holly_Vol_6.txt
+Estimate based on POS bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.19298245653155785 rad), File name: books/Marietta_Holly_1.txt
+Rank: 2 (0.2664800866515872 rad), File name: books/Antsey_3.txt
+Rank: 3 (0.2728079323103492 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 4 (0.28405101600059157 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 5 (0.28479144073057006 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 6 (0.2851426572311144 rad), File name: books/James_Cabell_2.txt
+Rank: 7 (0.2897984061227309 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 8 (0.29502016965791256 rad), File name: books/James_Cabell_3.txt
+Rank: 9 (0.2958643185018355 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 10 (0.2986166867545542 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 11 (0.3211802461092519 rad), File name: books/James_Cabell_1.txt
+Rank: 12 (0.3293333345330213 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 13 (0.34000867270059715 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 14 (0.34509240510235273 rad), File name: books/Fletcher_2.txt
+Rank: 15 (0.3507115585270274 rad), File name: books/Will_Morris_2.txt
+Rank: 16 (0.35331764240097363 rad), File name: books/Fletcher_1.txt
+Rank: 17 (0.3728614989403661 rad), File name: books/Frank_Baum_2.txt
+Rank: 18 (0.3753107044752523 rad), File name: books/Will_Morris_3.txt
+Rank: 19 (0.39241406704111986 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 20 (0.39415351602088783 rad), File name: books/Anstey_1.txt
+Rank: 21 (0.398098881537414 rad), File name: books/Frank_Baum_1.txt
+Rank: 22 (0.40210507000648976 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 23 (0.40527522696395735 rad), File name: books/Antsey_2.txt
+Rank: 24 (0.41266597934761917 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 25 (0.41294363762511116 rad), File name: books/Frank_Baum_3.txt
+Rank: 26 (0.41301786993140127 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 27 (0.41314730137626315 rad), File name: books/Frank_Baum_4.txt
+Rank: 28 (0.41714115282267006 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 29 (0.419186338972685 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 30 (0.4412398205695232 rad), File name: books/Will_Morris_1.txt
+ 
+Estimate based on word bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.9474686065359814 rad), File name: books/Marietta_Holly_1.txt
+Rank: 2 (0.9919677785375784 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 3 (1.004737621800542 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 4 (1.0100980139233988 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 5 (1.0191324343720145 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 6 (1.0248694376689689 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 7 (1.02658560703777 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 8 (1.0309002057755636 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 9 (1.0312641627449874 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 10 (1.0452220109277286 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 11 (1.0486303653057858 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 12 (1.0495838467761907 rad), File name: books/Antsey_3.txt
+Rank: 13 (1.0514326783667391 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 14 (1.0558405221922271 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 15 (1.0754732274648788 rad), File name: books/Will_Morris_2.txt
+Rank: 16 (1.0765078197737825 rad), File name: books/Will_Morris_3.txt
+Rank: 17 (1.082935347348754 rad), File name: books/Frank_Baum_2.txt
+Rank: 18 (1.0832356826543186 rad), File name: books/Frank_Baum_1.txt
+Rank: 19 (1.0920017053793047 rad), File name: books/James_Cabell_2.txt
+Rank: 20 (1.0957501567985213 rad), File name: books/James_Cabell_3.txt
+Rank: 21 (1.0976386490322028 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 22 (1.1095835856552958 rad), File name: books/Frank_Baum_3.txt
+Rank: 23 (1.1137440390641822 rad), File name: books/Antsey_2.txt
+Rank: 24 (1.121774818006904 rad), File name: books/Fletcher_1.txt
+Rank: 25 (1.1291025889621158 rad), File name: books/Will_Morris_1.txt
+Rank: 26 (1.130468252644971 rad), File name: books/Fletcher_2.txt
+Rank: 27 (1.133522905247651 rad), File name: books/James_Cabell_1.txt
+Rank: 28 (1.1454374714785374 rad), File name: books/Frank_Baum_4.txt
+Rank: 29 (1.1519833380532352 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 30 (1.1536486940547448 rad), File name: books/Anstey_1.txt
+ 
+Currently testing file: test_data/Wells_Invisible_Man.txt
+Estimate based on POS bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.17282656680478423 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 2 (0.17734743595614533 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 3 (0.18498896128426368 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 4 (0.18569620039044724 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 5 (0.1977522945291755 rad), File name: books/Antsey_3.txt
+Rank: 6 (0.21094601991888545 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 7 (0.21548768408688912 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 8 (0.21937014082956244 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 9 (0.23286797946439206 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 10 (0.2348113553791893 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 11 (0.2458147382780959 rad), File name: books/Frank_Baum_2.txt
+Rank: 12 (0.25491430286000033 rad), File name: books/Frank_Baum_1.txt
+Rank: 13 (0.2550146808895678 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 14 (0.27755858796541016 rad), File name: books/Fletcher_1.txt
+Rank: 15 (0.278966254887669 rad), File name: books/James_Cabell_3.txt
+Rank: 16 (0.29128809543044376 rad), File name: books/Fletcher_2.txt
+Rank: 17 (0.29631442659831836 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 18 (0.32288727482129154 rad), File name: books/Will_Morris_3.txt
+Rank: 19 (0.32332065050015046 rad), File name: books/Will_Morris_2.txt
+Rank: 20 (0.3269466357470104 rad), File name: books/James_Cabell_1.txt
+Rank: 21 (0.32705765698423156 rad), File name: books/James_Cabell_2.txt
+Rank: 22 (0.33412640926446363 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 23 (0.35661594514982026 rad), File name: books/Frank_Baum_4.txt
+Rank: 24 (0.3567055308527911 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 25 (0.36433823912623614 rad), File name: books/Anstey_1.txt
+Rank: 26 (0.3801028212728102 rad), File name: books/Frank_Baum_3.txt
+Rank: 27 (0.3820394033333566 rad), File name: books/Marietta_Holly_1.txt
+Rank: 28 (0.3834069910775645 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 29 (0.3843945403288195 rad), File name: books/Will_Morris_1.txt
+Rank: 30 (0.4383051708323948 rad), File name: books/Antsey_2.txt
+ 
+Estimate based on word bigrams
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.6888930835572402 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 2 (0.6968001405134436 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 3 (0.7260630805030504 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 4 (0.7290033967937475 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 5 (0.73238638824067 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 6 (0.7427914760577436 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 7 (0.7512973706771705 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 8 (0.7649327544715734 rad), File name: books/Antsey_3.txt
+Rank: 9 (0.7694805644629974 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 10 (0.7783939357572993 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 11 (0.8165520273825863 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 12 (0.8274281645812954 rad), File name: books/Frank_Baum_1.txt
+Rank: 13 (0.8274439765551711 rad), File name: books/Frank_Baum_2.txt
+Rank: 14 (0.8296014515122393 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 15 (0.8604811339014107 rad), File name: books/Fletcher_1.txt
+Rank: 16 (0.867251947261223 rad), File name: books/James_Cabell_3.txt
+Rank: 17 (0.8675245382783842 rad), File name: books/Fletcher_2.txt
+Rank: 18 (0.8685856197849666 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 19 (0.8780867370871637 rad), File name: books/Will_Morris_3.txt
+Rank: 20 (0.8813633807433873 rad), File name: books/Antsey_2.txt
+Rank: 21 (0.8831058074876399 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 22 (0.8882210629176094 rad), File name: books/Anstey_1.txt
+Rank: 23 (0.8891116470386984 rad), File name: books/Frank_Baum_3.txt
+Rank: 24 (0.9038710680141702 rad), File name: books/Will_Morris_2.txt
+Rank: 25 (0.9115535888565982 rad), File name: books/James_Cabell_1.txt
+Rank: 26 (0.9209939637127496 rad), File name: books/James_Cabell_2.txt
+Rank: 27 (0.9282117772491665 rad), File name: books/Will_Morris_1.txt
+Rank: 28 (0.9392740299313288 rad), File name: books/Frank_Baum_4.txt
+Rank: 29 (0.9636619047403544 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 30 (1.0952507408481023 rad), File name: books/Marietta_Holly_1.txt
+ 
+Beginning word frequency
+ 
+Currently testing file: test_data/Arthur_Doyle_Wisteria.txt
+Stats for closest match (success-failure method) (best to worst match): 
+Rank: 1 (Percentage of closeness: 10.42%), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 2 (Percentage of closeness: 9.98%), File name: books/Antsey_2.txt
+Rank: 3 (Percentage of closeness: 9.24%), File name: books/Donnell_Animal_Ghost.txt
+Rank: 4 (Percentage of closeness: 9.13%), File name: books/Bramah_Max_Carrados.txt
+Rank: 5 (Percentage of closeness: 8.55%), File name: books/Arthur_Doyle_3.txt
+Rank: 6 (Percentage of closeness: 8.44%), File name: books/Arthur_Doyle_2.txt
+Rank: 7 (Percentage of closeness: 8.23%), File name: books/Arthur_Doyle_1.txt
+Rank: 8 (Percentage of closeness: 8.23%), File name: books/Antsey_3.txt
+Rank: 9 (Percentage of closeness: 8.06%), File name: books/Wells_The First Men on the Moon.txt
+Rank: 10 (Percentage of closeness: 7.95%), File name: books/Zane Grey_The UP Trail.txt
+Rank: 11 (Percentage of closeness: 7.88%), File name: books/Anstey_1.txt
+Rank: 12 (Percentage of closeness: 7.54%), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 13 (Percentage of closeness: 7.29%), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 14 (Percentage of closeness: 7.28%), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 15 (Percentage of closeness: 7.27%), File name: books/James_Cabell_3.txt
+Rank: 16 (Percentage of closeness: 7.18%), File name: books/Wells_The War of the Worlds.txt
+Rank: 17 (Percentage of closeness: 7.0%), File name: books/James_Cabell_2.txt
+Rank: 18 (Percentage of closeness: 6.94%), File name: books/James_Cabell_1.txt
+Rank: 19 (Percentage of closeness: 6.74%), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 20 (Percentage of closeness: 6.48%), File name: books/Fletcher_1.txt
+Rank: 21 (Percentage of closeness: 6.27%), File name: books/Fletcher_2.txt
+Rank: 22 (Percentage of closeness: 5.8%), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 23 (Percentage of closeness: 5.25%), File name: books/Frank_Baum_4.txt
+Rank: 24 (Percentage of closeness: 5.19%), File name: books/Frank_Baum_3.txt
+Rank: 25 (Percentage of closeness: 5.02%), File name: books/Frank_Baum_2.txt
+Rank: 26 (Percentage of closeness: 4.99%), File name: books/Frank_Baum_1.txt
+Rank: 27 (Percentage of closeness: 4.44%), File name: books/Will_Morris_1.txt
+Rank: 28 (Percentage of closeness: 4.05%), File name: books/Will_Morris_2.txt
+Rank: 29 (Percentage of closeness: 3.13%), File name: books/Will_Morris_3.txt
+Rank: 30 (Percentage of closeness: 1.15%), File name: books/Marietta_Holly_1.txt
+ 
+Stats for closest match (squared error) (best to worst match): 
+Rank: 1, File name: books/Antsey_2.txt
+Rank: 2, File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 3, File name: books/James_Cabell_2.txt
+Rank: 4, File name: books/Fletcher_1.txt
+Rank: 5, File name: books/Wells_The First Men on the Moon.txt
+Rank: 6, File name: books/Zane Grey_The UP Trail.txt
+Rank: 7, File name: books/Antsey_3.txt
+Rank: 8, File name: books/Donnell_Animal_Ghost.txt
+Rank: 9, File name: books/Bramah_Max_Carrados.txt
+Rank: 10, File name: books/Will_Morris_1.txt
+Rank: 11, File name: books/Fletcher_2.txt
+Rank: 12, File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 13, File name: books/Arthur_Doyle_3.txt
+Rank: 14, File name: books/Wells_The War of the Worlds.txt
+Rank: 15, File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 16, File name: books/James_Cabell_3.txt
+Rank: 17, File name: books/Anstey_1.txt
+Rank: 18, File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 19, File name: books/Frank_Baum_3.txt
+Rank: 20, File name: books/Will_Morris_3.txt
+Rank: 21, File name: books/Arthur_Doyle_1.txt
+Rank: 22, File name: books/Arthur_Doyle_2.txt
+Rank: 23, File name: books/Frank_Baum_4.txt
+Rank: 24, File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 25, File name: books/James_Cabell_1.txt
+Rank: 26, File name: books/Frank_Baum_1.txt
+Rank: 27, File name: books/Frank_Baum_2.txt
+Rank: 28, File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 29, File name: books/Will_Morris_2.txt
+Rank: 30, File name: books/Marietta_Holly_1.txt
+ 
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.1086168712805934 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 2 (0.13947423761566582 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 3 (0.18046399706583016 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 4 (0.23123150777115853 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 5 (0.24236997003442767 rad), File name: books/James_Cabell_3.txt
+Rank: 6 (0.25549487129284515 rad), File name: books/Antsey_3.txt
+Rank: 7 (0.2656018376941521 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 8 (0.2730180171088558 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 9 (0.27395959907662387 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 10 (0.2747829489543305 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 11 (0.2973228844504672 rad), File name: books/Fletcher_1.txt
+Rank: 12 (0.3099906144598252 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 13 (0.31488798223528924 rad), File name: books/Antsey_2.txt
+Rank: 14 (0.3151242991439805 rad), File name: books/James_Cabell_1.txt
+Rank: 15 (0.3248451818475825 rad), File name: books/Anstey_1.txt
+Rank: 16 (0.33015483093109443 rad), File name: books/Fletcher_2.txt
+Rank: 17 (0.3363570433142912 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 18 (0.3373487029225065 rad), File name: books/James_Cabell_2.txt
+Rank: 19 (0.36847302847860935 rad), File name: books/Frank_Baum_4.txt
+Rank: 20 (0.37637757784395354 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 21 (0.3778290182679062 rad), File name: books/Frank_Baum_2.txt
+Rank: 22 (0.3790044602951756 rad), File name: books/Frank_Baum_1.txt
+Rank: 23 (0.38035976520955156 rad), File name: books/Frank_Baum_3.txt
+Rank: 24 (0.38158673746853894 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 25 (0.40091226727870305 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 26 (0.4691625223783884 rad), File name: books/Will_Morris_1.txt
+Rank: 27 (0.46992391286678586 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 28 (0.48596692622558885 rad), File name: books/Will_Morris_3.txt
+Rank: 29 (0.49895073454662586 rad), File name: books/Marietta_Holly_1.txt
+Rank: 30 (0.5523458505612565 rad), File name: books/Will_Morris_2.txt
+ 
+Currently testing file: test_data/Bramah_Kai_Lung_Golden_Hours.txt
+Stats for closest match (success-failure method) (best to worst match): 
+Rank: 1 (Percentage of closeness: 11.18%), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 2 (Percentage of closeness: 10.58%), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 3 (Percentage of closeness: 8.34%), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 4 (Percentage of closeness: 8.19%), File name: books/Antsey_2.txt
+Rank: 5 (Percentage of closeness: 7.83%), File name: books/Bramah_Max_Carrados.txt
+Rank: 6 (Percentage of closeness: 7.6%), File name: books/James_Cabell_2.txt
+Rank: 7 (Percentage of closeness: 7.4%), File name: books/James_Cabell_3.txt
+Rank: 8 (Percentage of closeness: 7.37%), File name: books/Wells_The First Men on the Moon.txt
+Rank: 9 (Percentage of closeness: 7.25%), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 10 (Percentage of closeness: 7.1%), File name: books/Zane Grey_The UP Trail.txt
+Rank: 11 (Percentage of closeness: 7.09%), File name: books/Anstey_1.txt
+Rank: 12 (Percentage of closeness: 7.07%), File name: books/Donnell_Animal_Ghost.txt
+Rank: 13 (Percentage of closeness: 6.49%), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 14 (Percentage of closeness: 6.46%), File name: books/Antsey_3.txt
+Rank: 15 (Percentage of closeness: 6.43%), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 16 (Percentage of closeness: 6.34%), File name: books/James_Cabell_1.txt
+Rank: 17 (Percentage of closeness: 6.19%), File name: books/Arthur_Doyle_1.txt
+Rank: 18 (Percentage of closeness: 6.13%), File name: books/Wells_The War of the Worlds.txt
+Rank: 19 (Percentage of closeness: 5.92%), File name: books/Arthur_Doyle_3.txt
+Rank: 20 (Percentage of closeness: 5.85%), File name: books/Arthur_Doyle_2.txt
+Rank: 21 (Percentage of closeness: 4.96%), File name: books/Frank_Baum_3.txt
+Rank: 22 (Percentage of closeness: 4.71%), File name: books/Frank_Baum_4.txt
+Rank: 23 (Percentage of closeness: 4.67%), File name: books/Fletcher_1.txt
+Rank: 24 (Percentage of closeness: 4.65%), File name: books/Fletcher_2.txt
+Rank: 25 (Percentage of closeness: 4.24%), File name: books/Will_Morris_1.txt
+Rank: 26 (Percentage of closeness: 4.11%), File name: books/Will_Morris_2.txt
+Rank: 27 (Percentage of closeness: 4.09%), File name: books/Frank_Baum_2.txt
+Rank: 28 (Percentage of closeness: 4.06%), File name: books/Frank_Baum_1.txt
+Rank: 29 (Percentage of closeness: 3.42%), File name: books/Will_Morris_3.txt
+Rank: 30 (Percentage of closeness: 1.15%), File name: books/Marietta_Holly_1.txt
+ 
+Stats for closest match (squared error) (best to worst match): 
+Rank: 1, File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 2, File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 3, File name: books/Donnell_Animal_Ghost.txt
+Rank: 4, File name: books/Wells_The War of the Worlds.txt
+Rank: 5, File name: books/Bramah_Max_Carrados.txt
+Rank: 6, File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 7, File name: books/Antsey_3.txt
+Rank: 8, File name: books/James_Cabell_2.txt
+Rank: 9, File name: books/Wells_The First Men on the Moon.txt
+Rank: 10, File name: books/Fletcher_2.txt
+Rank: 11, File name: books/Arthur_Doyle_3.txt
+Rank: 12, File name: books/Will_Morris_1.txt
+Rank: 13, File name: books/Frank_Baum_3.txt
+Rank: 14, File name: books/Fletcher_1.txt
+Rank: 15, File name: books/Zane Grey_The UP Trail.txt
+Rank: 16, File name: books/James_Cabell_3.txt
+Rank: 17, File name: books/Frank_Baum_4.txt
+Rank: 18, File name: books/Frank_Baum_1.txt
+Rank: 19, File name: books/Antsey_2.txt
+Rank: 20, File name: books/Frank_Baum_2.txt
+Rank: 21, File name: books/Arthur_Doyle_1.txt
+Rank: 22, File name: books/Will_Morris_3.txt
+Rank: 23, File name: books/Anstey_1.txt
+Rank: 24, File name: books/Arthur_Doyle_2.txt
+Rank: 25, File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 26, File name: books/James_Cabell_1.txt
+Rank: 27, File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 28, File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 29, File name: books/Marietta_Holly_1.txt
+Rank: 30, File name: books/Will_Morris_2.txt
+ 
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.18071080029565012 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 2 (0.1827075658167846 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 3 (0.3412797555106007 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 4 (0.35011109954799985 rad), File name: books/Frank_Baum_4.txt
+Rank: 5 (0.3532640468625455 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 6 (0.3630823789897287 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 7 (0.36359251315801455 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 8 (0.36554747552344485 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 9 (0.36856064370611735 rad), File name: books/Frank_Baum_1.txt
+Rank: 10 (0.3700962102588972 rad), File name: books/Frank_Baum_2.txt
+Rank: 11 (0.38747503398817396 rad), File name: books/Antsey_3.txt
+Rank: 12 (0.3942210302047691 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 13 (0.40250008348743005 rad), File name: books/James_Cabell_3.txt
+Rank: 14 (0.40615028928994906 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 15 (0.4168404568508175 rad), File name: books/Frank_Baum_3.txt
+Rank: 16 (0.4234796125625232 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 17 (0.4507855357415163 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 18 (0.4542820589073089 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 19 (0.45593269316760643 rad), File name: books/James_Cabell_2.txt
+Rank: 20 (0.45735068952893304 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 21 (0.46233764811574946 rad), File name: books/Will_Morris_1.txt
+Rank: 22 (0.49006494794853256 rad), File name: books/Fletcher_2.txt
+Rank: 23 (0.5041986977055631 rad), File name: books/James_Cabell_1.txt
+Rank: 24 (0.5051068332407918 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 25 (0.5075756268543706 rad), File name: books/Antsey_2.txt
+Rank: 26 (0.5418665373494587 rad), File name: books/Fletcher_1.txt
+Rank: 27 (0.556141272715413 rad), File name: books/Will_Morris_3.txt
+Rank: 28 (0.5685994120901033 rad), File name: books/Anstey_1.txt
+Rank: 29 (0.6054426381253275 rad), File name: books/Marietta_Holly_1.txt
+Rank: 30 (0.6224565328410246 rad), File name: books/Will_Morris_2.txt
+ 
+Currently testing file: test_data/Donnell_Ghost_Stories.txt
+Stats for closest match (success-failure method) (best to worst match): 
+Rank: 1 (Percentage of closeness: 13.14%), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 2 (Percentage of closeness: 12.4%), File name: books/Donnell_Animal_Ghost.txt
+Rank: 3 (Percentage of closeness: 10.91%), File name: books/Antsey_2.txt
+Rank: 4 (Percentage of closeness: 9.98%), File name: books/Anstey_1.txt
+Rank: 5 (Percentage of closeness: 9.85%), File name: books/Arthur_Doyle_1.txt
+Rank: 6 (Percentage of closeness: 9.82%), File name: books/Wells_The First Men on the Moon.txt
+Rank: 7 (Percentage of closeness: 9.59%), File name: books/James_Cabell_3.txt
+Rank: 8 (Percentage of closeness: 9.51%), File name: books/Bramah_Max_Carrados.txt
+Rank: 9 (Percentage of closeness: 9.4%), File name: books/Arthur_Doyle_3.txt
+Rank: 10 (Percentage of closeness: 9.39%), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 11 (Percentage of closeness: 9.34%), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 12 (Percentage of closeness: 9.13%), File name: books/Arthur_Doyle_2.txt
+Rank: 13 (Percentage of closeness: 9.1%), File name: books/Wells_The War of the Worlds.txt
+Rank: 14 (Percentage of closeness: 9.01%), File name: books/Antsey_3.txt
+Rank: 15 (Percentage of closeness: 8.93%), File name: books/Zane Grey_The UP Trail.txt
+Rank: 16 (Percentage of closeness: 8.92%), File name: books/James_Cabell_1.txt
+Rank: 17 (Percentage of closeness: 8.63%), File name: books/James_Cabell_2.txt
+Rank: 18 (Percentage of closeness: 8.3%), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 19 (Percentage of closeness: 7.58%), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 20 (Percentage of closeness: 7.52%), File name: books/Fletcher_1.txt
+Rank: 21 (Percentage of closeness: 7.23%), File name: books/Fletcher_2.txt
+Rank: 22 (Percentage of closeness: 7.06%), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 23 (Percentage of closeness: 6.87%), File name: books/Frank_Baum_4.txt
+Rank: 24 (Percentage of closeness: 6.74%), File name: books/Frank_Baum_2.txt
+Rank: 25 (Percentage of closeness: 6.61%), File name: books/Frank_Baum_1.txt
+Rank: 26 (Percentage of closeness: 6.39%), File name: books/Frank_Baum_3.txt
+Rank: 27 (Percentage of closeness: 5.39%), File name: books/Will_Morris_1.txt
+Rank: 28 (Percentage of closeness: 5.14%), File name: books/Will_Morris_2.txt
+Rank: 29 (Percentage of closeness: 4.09%), File name: books/Will_Morris_3.txt
+Rank: 30 (Percentage of closeness: 1.9%), File name: books/Marietta_Holly_1.txt
+ 
+Stats for closest match (squared error) (best to worst match): 
+Rank: 1, File name: books/Arthur_Doyle_1.txt
+Rank: 2, File name: books/Frank_Baum_1.txt
+Rank: 3, File name: books/Frank_Baum_2.txt
+Rank: 4, File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 5, File name: books/James_Cabell_3.txt
+Rank: 6, File name: books/Arthur_Doyle_2.txt
+Rank: 7, File name: books/Frank_Baum_4.txt
+Rank: 8, File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 9, File name: books/Frank_Baum_3.txt
+Rank: 10, File name: books/James_Cabell_1.txt
+Rank: 11, File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 12, File name: books/Arthur_Doyle_3.txt
+Rank: 13, File name: books/Donnell_Animal_Ghost.txt
+Rank: 14, File name: books/Will_Morris_3.txt
+Rank: 15, File name: books/Anstey_1.txt
+Rank: 16, File name: books/Bramah_Max_Carrados.txt
+Rank: 17, File name: books/Wells_The War of the Worlds.txt
+Rank: 18, File name: books/Antsey_3.txt
+Rank: 19, File name: books/Wells_The First Men on the Moon.txt
+Rank: 20, File name: books/Fletcher_2.txt
+Rank: 21, File name: books/James_Cabell_2.txt
+Rank: 22, File name: books/Fletcher_1.txt
+Rank: 23, File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 24, File name: books/Marietta_Holly_1.txt
+Rank: 25, File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 26, File name: books/Will_Morris_1.txt
+Rank: 27, File name: books/Antsey_2.txt
+Rank: 28, File name: books/Zane Grey_The UP Trail.txt
+Rank: 29, File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 30, File name: books/Will_Morris_2.txt
+ 
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.1703147129644589 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 2 (0.24764717300187034 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 3 (0.279022086161725 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 4 (0.2854068614151103 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 5 (0.28805105008362825 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 6 (0.2959064036093787 rad), File name: books/Antsey_3.txt
+Rank: 7 (0.30814023381292427 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 8 (0.3199700740489356 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 9 (0.3226180550722239 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 10 (0.32490086213121006 rad), File name: books/James_Cabell_3.txt
+Rank: 11 (0.3343909890906597 rad), File name: books/Frank_Baum_2.txt
+Rank: 12 (0.33520740533560883 rad), File name: books/Frank_Baum_1.txt
+Rank: 13 (0.34151272193056326 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 14 (0.3415601825265338 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 15 (0.3475563911379048 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 16 (0.35080311487305055 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 17 (0.3537258118515371 rad), File name: books/Frank_Baum_3.txt
+Rank: 18 (0.36139748920241327 rad), File name: books/Frank_Baum_4.txt
+Rank: 19 (0.36337824313980593 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 20 (0.3909666678881337 rad), File name: books/James_Cabell_1.txt
+Rank: 21 (0.3945878585227734 rad), File name: books/James_Cabell_2.txt
+Rank: 22 (0.39545177035497464 rad), File name: books/Fletcher_1.txt
+Rank: 23 (0.4179177982582768 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 24 (0.42650678562968974 rad), File name: books/Antsey_2.txt
+Rank: 25 (0.42962432577116044 rad), File name: books/Will_Morris_3.txt
+Rank: 26 (0.4380379121043314 rad), File name: books/Will_Morris_1.txt
+Rank: 27 (0.4500374980714959 rad), File name: books/Will_Morris_2.txt
+Rank: 28 (0.4547189128686368 rad), File name: books/Fletcher_2.txt
+Rank: 29 (0.46818647592452073 rad), File name: books/Anstey_1.txt
+Rank: 30 (0.5080689333659283 rad), File name: books/Marietta_Holly_1.txt
+ 
+Currently testing file: test_data/Fletcher_Middle_Temple.txt
+Stats for closest match (success-failure method) (best to worst match): 
+Rank: 1 (Percentage of closeness: 10.26%), File name: books/Bramah_Max_Carrados.txt
+Rank: 2 (Percentage of closeness: 9.91%), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 3 (Percentage of closeness: 9.56%), File name: books/Fletcher_2.txt
+Rank: 4 (Percentage of closeness: 8.99%), File name: books/Fletcher_1.txt
+Rank: 5 (Percentage of closeness: 8.9%), File name: books/Antsey_2.txt
+Rank: 6 (Percentage of closeness: 8.87%), File name: books/Antsey_3.txt
+Rank: 7 (Percentage of closeness: 8.65%), File name: books/Donnell_Animal_Ghost.txt
+Rank: 8 (Percentage of closeness: 8.59%), File name: books/Arthur_Doyle_2.txt
+Rank: 9 (Percentage of closeness: 8.57%), File name: books/Anstey_1.txt
+Rank: 10 (Percentage of closeness: 8.22%), File name: books/Arthur_Doyle_1.txt
+Rank: 11 (Percentage of closeness: 7.95%), File name: books/James_Cabell_1.txt
+Rank: 12 (Percentage of closeness: 7.94%), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 13 (Percentage of closeness: 7.87%), File name: books/James_Cabell_3.txt
+Rank: 14 (Percentage of closeness: 7.86%), File name: books/Arthur_Doyle_3.txt
+Rank: 15 (Percentage of closeness: 7.71%), File name: books/Zane Grey_The UP Trail.txt
+Rank: 16 (Percentage of closeness: 7.67%), File name: books/Wells_The First Men on the Moon.txt
+Rank: 17 (Percentage of closeness: 7.56%), File name: books/Wells_The War of the Worlds.txt
+Rank: 18 (Percentage of closeness: 7.49%), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 19 (Percentage of closeness: 6.9%), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 20 (Percentage of closeness: 6.81%), File name: books/James_Cabell_2.txt
+Rank: 21 (Percentage of closeness: 6.78%), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 22 (Percentage of closeness: 6.17%), File name: books/Frank_Baum_4.txt
+Rank: 23 (Percentage of closeness: 6.05%), File name: books/Frank_Baum_3.txt
+Rank: 24 (Percentage of closeness: 5.85%), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 25 (Percentage of closeness: 5.6%), File name: books/Frank_Baum_2.txt
+Rank: 26 (Percentage of closeness: 5.59%), File name: books/Frank_Baum_1.txt
+Rank: 27 (Percentage of closeness: 4.46%), File name: books/Will_Morris_1.txt
+Rank: 28 (Percentage of closeness: 3.98%), File name: books/Will_Morris_3.txt
+Rank: 29 (Percentage of closeness: 3.82%), File name: books/Will_Morris_2.txt
+Rank: 30 (Percentage of closeness: 1.6%), File name: books/Marietta_Holly_1.txt
+ 
+Stats for closest match (squared error) (best to worst match): 
+Rank: 1, File name: books/Fletcher_2.txt
+Rank: 2, File name: books/Bramah_Max_Carrados.txt
+Rank: 3, File name: books/Fletcher_1.txt
+Rank: 4, File name: books/Arthur_Doyle_3.txt
+Rank: 5, File name: books/Antsey_3.txt
+Rank: 6, File name: books/Anstey_1.txt
+Rank: 7, File name: books/James_Cabell_3.txt
+Rank: 8, File name: books/Donnell_Animal_Ghost.txt
+Rank: 9, File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 10, File name: books/Arthur_Doyle_1.txt
+Rank: 11, File name: books/Frank_Baum_3.txt
+Rank: 12, File name: books/Wells_The First Men on the Moon.txt
+Rank: 13, File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 14, File name: books/James_Cabell_1.txt
+Rank: 15, File name: books/James_Cabell_2.txt
+Rank: 16, File name: books/Arthur_Doyle_2.txt
+Rank: 17, File name: books/Frank_Baum_4.txt
+Rank: 18, File name: books/Wells_The War of the Worlds.txt
+Rank: 19, File name: books/Frank_Baum_1.txt
+Rank: 20, File name: books/Frank_Baum_2.txt
+Rank: 21, File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 22, File name: books/Will_Morris_3.txt
+Rank: 23, File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 24, File name: books/Will_Morris_1.txt
+Rank: 25, File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 26, File name: books/Antsey_2.txt
+Rank: 27, File name: books/Zane Grey_The UP Trail.txt
+Rank: 28, File name: books/Marietta_Holly_1.txt
+Rank: 29, File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 30, File name: books/Will_Morris_2.txt
+ 
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.26294880284318145 rad), File name: books/Fletcher_2.txt
+Rank: 2 (0.29805818973866166 rad), File name: books/Fletcher_1.txt
+Rank: 3 (0.3082117004208726 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 4 (0.3190441558894165 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 5 (0.32196130718770083 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 6 (0.33653813301466995 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 7 (0.3407484808925764 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 8 (0.35154148660136475 rad), File name: books/Antsey_3.txt
+Rank: 9 (0.3543108194947134 rad), File name: books/Anstey_1.txt
+Rank: 10 (0.3598707355296203 rad), File name: books/James_Cabell_3.txt
+Rank: 11 (0.36748730119654693 rad), File name: books/James_Cabell_1.txt
+Rank: 12 (0.37241605930413646 rad), File name: books/Antsey_2.txt
+Rank: 13 (0.3943214604384161 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 14 (0.39787726329934586 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 15 (0.4121825404121882 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 16 (0.4220673938919358 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 17 (0.4313560879327953 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 18 (0.43822760895639024 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 19 (0.4397642324906476 rad), File name: books/Frank_Baum_3.txt
+Rank: 20 (0.44257529579139104 rad), File name: books/Frank_Baum_2.txt
+Rank: 21 (0.4427776684684775 rad), File name: books/Frank_Baum_4.txt
+Rank: 22 (0.4440038688313692 rad), File name: books/Frank_Baum_1.txt
+Rank: 23 (0.44961747613433256 rad), File name: books/James_Cabell_2.txt
+Rank: 24 (0.45388188550356173 rad), File name: books/Will_Morris_1.txt
+Rank: 25 (0.45656119756352637 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 26 (0.4775380363014451 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 27 (0.48610693660375276 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 28 (0.5265626092446208 rad), File name: books/Will_Morris_3.txt
+Rank: 29 (0.5405687503092241 rad), File name: books/Marietta_Holly_1.txt
+Rank: 30 (0.6174855933761734 rad), File name: books/Will_Morris_2.txt
+ 
+Currently testing file: test_data/Marietta_Holly_Vol_6.txt
+Stats for closest match (success-failure method) (best to worst match): 
+Rank: 1 (Percentage of closeness: 11.39%), File name: books/Marietta_Holly_1.txt
+Rank: 2 (Percentage of closeness: 9.28%), File name: books/James_Cabell_3.txt
+Rank: 3 (Percentage of closeness: 9.22%), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 4 (Percentage of closeness: 8.74%), File name: books/James_Cabell_1.txt
+Rank: 5 (Percentage of closeness: 7.78%), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 6 (Percentage of closeness: 7.59%), File name: books/Bramah_Max_Carrados.txt
+Rank: 7 (Percentage of closeness: 7.53%), File name: books/Donnell_Animal_Ghost.txt
+Rank: 8 (Percentage of closeness: 7.47%), File name: books/Arthur_Doyle_2.txt
+Rank: 9 (Percentage of closeness: 7.47%), File name: books/Antsey_3.txt
+Rank: 10 (Percentage of closeness: 7.47%), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 11 (Percentage of closeness: 7.17%), File name: books/Wells_The War of the Worlds.txt
+Rank: 12 (Percentage of closeness: 7.17%), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 13 (Percentage of closeness: 7.11%), File name: books/Arthur_Doyle_1.txt
+Rank: 14 (Percentage of closeness: 7.05%), File name: books/Zane Grey_The UP Trail.txt
+Rank: 15 (Percentage of closeness: 6.99%), File name: books/Anstey_1.txt
+Rank: 16 (Percentage of closeness: 6.93%), File name: books/Frank_Baum_3.txt
+Rank: 17 (Percentage of closeness: 6.87%), File name: books/Wells_The First Men on the Moon.txt
+Rank: 18 (Percentage of closeness: 6.87%), File name: books/Antsey_2.txt
+Rank: 19 (Percentage of closeness: 6.81%), File name: books/Frank_Baum_2.txt
+Rank: 20 (Percentage of closeness: 6.75%), File name: books/Fletcher_2.txt
+Rank: 21 (Percentage of closeness: 6.69%), File name: books/James_Cabell_2.txt
+Rank: 22 (Percentage of closeness: 6.57%), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 23 (Percentage of closeness: 6.51%), File name: books/Frank_Baum_4.txt
+Rank: 24 (Percentage of closeness: 6.39%), File name: books/Arthur_Doyle_3.txt
+Rank: 25 (Percentage of closeness: 6.33%), File name: books/Frank_Baum_1.txt
+Rank: 26 (Percentage of closeness: 6.03%), File name: books/Will_Morris_1.txt
+Rank: 27 (Percentage of closeness: 5.91%), File name: books/Fletcher_1.txt
+Rank: 28 (Percentage of closeness: 5.85%), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 29 (Percentage of closeness: 5.0%), File name: books/Will_Morris_3.txt
+Rank: 30 (Percentage of closeness: 4.58%), File name: books/Will_Morris_2.txt
+ 
+Stats for closest match (squared error) (best to worst match): 
+Rank: 1, File name: books/Marietta_Holly_1.txt
+Rank: 2, File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 3, File name: books/Arthur_Doyle_2.txt
+Rank: 4, File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 5, File name: books/James_Cabell_1.txt
+Rank: 6, File name: books/Arthur_Doyle_1.txt
+Rank: 7, File name: books/Frank_Baum_2.txt
+Rank: 8, File name: books/Frank_Baum_1.txt
+Rank: 9, File name: books/Frank_Baum_4.txt
+Rank: 10, File name: books/James_Cabell_3.txt
+Rank: 11, File name: books/Anstey_1.txt
+Rank: 12, File name: books/Frank_Baum_3.txt
+Rank: 13, File name: books/Will_Morris_3.txt
+Rank: 14, File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 15, File name: books/Arthur_Doyle_3.txt
+Rank: 16, File name: books/Bramah_Max_Carrados.txt
+Rank: 17, File name: books/Fletcher_2.txt
+Rank: 18, File name: books/Antsey_3.txt
+Rank: 19, File name: books/Donnell_Animal_Ghost.txt
+Rank: 20, File name: books/Wells_The War of the Worlds.txt
+Rank: 21, File name: books/Wells_The First Men on the Moon.txt
+Rank: 22, File name: books/Fletcher_1.txt
+Rank: 23, File name: books/James_Cabell_2.txt
+Rank: 24, File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 25, File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 26, File name: books/Will_Morris_1.txt
+Rank: 27, File name: books/Antsey_2.txt
+Rank: 28, File name: books/Zane Grey_The UP Trail.txt
+Rank: 29, File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 30, File name: books/Will_Morris_2.txt
+ 
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.2738183249690701 rad), File name: books/Marietta_Holly_1.txt
+Rank: 2 (0.3813117047913891 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 3 (0.40123494729573717 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 4 (0.41119585107184914 rad), File name: books/Antsey_3.txt
+Rank: 5 (0.41311626005518554 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 6 (0.4132169885071776 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 7 (0.41421634606979224 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 8 (0.4205595911050575 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 9 (0.4289922750614629 rad), File name: books/James_Cabell_3.txt
+Rank: 10 (0.43142827558066693 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 11 (0.44533284790518485 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 12 (0.44577079330552233 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 13 (0.44662369156898407 rad), File name: books/Fletcher_1.txt
+Rank: 14 (0.4487351152402015 rad), File name: books/Frank_Baum_3.txt
+Rank: 15 (0.45096643903376393 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 16 (0.4518017019890003 rad), File name: books/James_Cabell_2.txt
+Rank: 17 (0.456403132090477 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 18 (0.4594829580331285 rad), File name: books/Will_Morris_3.txt
+Rank: 19 (0.46584389254308994 rad), File name: books/Frank_Baum_2.txt
+Rank: 20 (0.4679068877627509 rad), File name: books/Frank_Baum_1.txt
+Rank: 21 (0.4766036968427956 rad), File name: books/Frank_Baum_4.txt
+Rank: 22 (0.4767449917914443 rad), File name: books/James_Cabell_1.txt
+Rank: 23 (0.4776980784929287 rad), File name: books/Will_Morris_1.txt
+Rank: 24 (0.47975086133910166 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 25 (0.49614105759456417 rad), File name: books/Fletcher_2.txt
+Rank: 26 (0.49664763965143877 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 27 (0.5005612386204714 rad), File name: books/Anstey_1.txt
+Rank: 28 (0.5024391733321902 rad), File name: books/Antsey_2.txt
+Rank: 29 (0.5221440894793635 rad), File name: books/Will_Morris_2.txt
+Rank: 30 (0.5360026909676636 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+ 
+Currently testing file: test_data/Wells_Invisible_Man.txt
+Stats for closest match (success-failure method) (best to worst match): 
+Rank: 1 (Percentage of closeness: 11.17%), File name: books/Wells_The War of the Worlds.txt
+Rank: 2 (Percentage of closeness: 10.87%), File name: books/Wells_The First Men on the Moon.txt
+Rank: 3 (Percentage of closeness: 10.72%), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 4 (Percentage of closeness: 10.42%), File name: books/Antsey_2.txt
+Rank: 5 (Percentage of closeness: 10.04%), File name: books/Donnell_Animal_Ghost.txt
+Rank: 6 (Percentage of closeness: 10.0%), File name: books/Anstey_1.txt
+Rank: 7 (Percentage of closeness: 9.87%), File name: books/Bramah_Max_Carrados.txt
+Rank: 8 (Percentage of closeness: 9.51%), File name: books/Arthur_Doyle_1.txt
+Rank: 9 (Percentage of closeness: 9.36%), File name: books/Antsey_3.txt
+Rank: 10 (Percentage of closeness: 9.26%), File name: books/James_Cabell_3.txt
+Rank: 11 (Percentage of closeness: 9.17%), File name: books/Zane Grey_The UP Trail.txt
+Rank: 12 (Percentage of closeness: 8.93%), File name: books/James_Cabell_1.txt
+Rank: 13 (Percentage of closeness: 8.8%), File name: books/James_Cabell_2.txt
+Rank: 14 (Percentage of closeness: 8.7%), File name: books/Arthur_Doyle_2.txt
+Rank: 15 (Percentage of closeness: 8.7%), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 16 (Percentage of closeness: 8.62%), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 17 (Percentage of closeness: 8.51%), File name: books/Arthur_Doyle_3.txt
+Rank: 18 (Percentage of closeness: 8.42%), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 19 (Percentage of closeness: 8.28%), File name: books/Fletcher_1.txt
+Rank: 20 (Percentage of closeness: 8.17%), File name: books/Fletcher_2.txt
+Rank: 21 (Percentage of closeness: 7.54%), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 22 (Percentage of closeness: 7.42%), File name: books/Frank_Baum_3.txt
+Rank: 23 (Percentage of closeness: 7.26%), File name: books/Frank_Baum_4.txt
+Rank: 24 (Percentage of closeness: 6.71%), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 25 (Percentage of closeness: 6.59%), File name: books/Frank_Baum_2.txt
+Rank: 26 (Percentage of closeness: 6.58%), File name: books/Frank_Baum_1.txt
+Rank: 27 (Percentage of closeness: 5.41%), File name: books/Will_Morris_1.txt
+Rank: 28 (Percentage of closeness: 4.97%), File name: books/Will_Morris_2.txt
+Rank: 29 (Percentage of closeness: 3.97%), File name: books/Will_Morris_3.txt
+Rank: 30 (Percentage of closeness: 1.88%), File name: books/Marietta_Holly_1.txt
+ 
+Stats for closest match (squared error) (best to worst match): 
+Rank: 1, File name: books/Arthur_Doyle_1.txt
+Rank: 2, File name: books/Frank_Baum_4.txt
+Rank: 3, File name: books/Frank_Baum_1.txt
+Rank: 4, File name: books/Frank_Baum_2.txt
+Rank: 5, File name: books/Frank_Baum_3.txt
+Rank: 6, File name: books/James_Cabell_3.txt
+Rank: 7, File name: books/Arthur_Doyle_2.txt
+Rank: 8, File name: books/Arthur_Doyle_3.txt
+Rank: 9, File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 10, File name: books/James_Cabell_1.txt
+Rank: 11, File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 12, File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 13, File name: books/Will_Morris_3.txt
+Rank: 14, File name: books/Bramah_Max_Carrados.txt
+Rank: 15, File name: books/Antsey_3.txt
+Rank: 16, File name: books/Anstey_1.txt
+Rank: 17, File name: books/Donnell_Animal_Ghost.txt
+Rank: 18, File name: books/Wells_The War of the Worlds.txt
+Rank: 19, File name: books/Fletcher_2.txt
+Rank: 20, File name: books/Wells_The First Men on the Moon.txt
+Rank: 21, File name: books/Fletcher_1.txt
+Rank: 22, File name: books/James_Cabell_2.txt
+Rank: 23, File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 24, File name: books/Marietta_Holly_1.txt
+Rank: 25, File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 26, File name: books/Will_Morris_1.txt
+Rank: 27, File name: books/Antsey_2.txt
+Rank: 28, File name: books/Zane Grey_The UP Trail.txt
+Rank: 29, File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 30, File name: books/Will_Morris_2.txt
+ 
+Stats for closest match (cosine similarity) (best to worst match): 
+Rank: 1 (0.2647733644751245 rad), File name: books/Antsey_3.txt
+Rank: 2 (0.2650038806882266 rad), File name: books/Arthur_Doyle_1.txt
+Rank: 3 (0.2653822718122717 rad), File name: books/Donnell_Animal_Ghost.txt
+Rank: 4 (0.26565993071983185 rad), File name: books/Wells_The War of the Worlds.txt
+Rank: 5 (0.2786652634681546 rad), File name: books/Zane Grey_Tales of Lonely Trails.txt
+Rank: 6 (0.3061178335478145 rad), File name: books/Frank_Baum_2.txt
+Rank: 7 (0.3063387690776775 rad), File name: books/Frank_Baum_1.txt
+Rank: 8 (0.3165917562853034 rad), File name: books/Frank_Baum_4.txt
+Rank: 9 (0.3219908232379941 rad), File name: books/Arthur_Doyle_2.txt
+Rank: 10 (0.3239988701799429 rad), File name: books/Wells_The First Men on the Moon.txt
+Rank: 11 (0.3258674464985054 rad), File name: books/Zane Grey_The UP Trail.txt
+Rank: 12 (0.3284880057726789 rad), File name: books/Donnell_The_Sorcery_Club.txt
+Rank: 13 (0.3317359868032123 rad), File name: books/Frank_Baum_3.txt
+Rank: 14 (0.3415378069110704 rad), File name: books/Bramah_Max_Carrados.txt
+Rank: 15 (0.3417781092194709 rad), File name: books/James_Cabell_3.txt
+Rank: 16 (0.350094693217727 rad), File name: books/Arthur_Doyle_3.txt
+Rank: 17 (0.383170002363493 rad), File name: books/Bramah_The_Mirror_of_Kong_Ho.txt
+Rank: 18 (0.3970573303890462 rad), File name: books/Fletcher_1.txt
+Rank: 19 (0.4013725411154522 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2.txt
+Rank: 20 (0.4038865423731659 rad), File name: books/Will_Morris_1.txt
+Rank: 21 (0.40544323569535834 rad), File name: books/Fletcher_2.txt
+Rank: 22 (0.4127706994604769 rad), File name: books/Mrs. Alexander_Kate Vernon Vol2(1).txt
+Rank: 23 (0.41855686480217513 rad), File name: books/James_Cabell_1.txt
+Rank: 24 (0.42140537973982317 rad), File name: books/Bramah_The_Wallet_of_Kai_Lung.txt
+Rank: 25 (0.4231667078602342 rad), File name: books/Will_Morris_3.txt
+Rank: 26 (0.42407311527101244 rad), File name: books/James_Cabell_2.txt
+Rank: 27 (0.4533949531137934 rad), File name: books/Anstey_1.txt
+Rank: 28 (0.474722461960239 rad), File name: books/Antsey_2.txt
+Rank: 29 (0.5073036241054046 rad), File name: books/Will_Morris_2.txt
+Rank: 30 (0.5152600959198733 rad), File name: books/Marietta_Holly_1.txt

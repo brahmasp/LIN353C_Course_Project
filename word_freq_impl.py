@@ -122,12 +122,14 @@ def success_based_closeness(data_stats, test_word_freq):
     filename_success_failure_sorted = sorted(filename_success_failure_map.items(), key = operator.itemgetter(1), reverse = True)
 
     print("Stats for closest match (success-failure method) (best to worst match): ");
+    rank = 1;
     for filename in filename_success_failure_sorted:
 
         # f = open(test_filename, 'r', encoding='utf8')
         # auth_name = get_author_name(f.read());
         # print (auth_name + " " + str(filename[1]))
-        print("Percentage of closeness: " + str(filename[1]) + "%, File name: " + filename[0]);
+        print("Rank: " + str(rank) + " (Percentage of closeness: " + str(filename[1]) + "%), File name: " + filename[0]);
+        rank += 1;
 
 # Measuring count differences (squared errors) and put them in ascending
 # order. In other words, best to worst match
