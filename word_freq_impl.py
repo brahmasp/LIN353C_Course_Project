@@ -290,8 +290,7 @@ def detect_author_word_freq(data_stats, test_name):
         cosine_based_closeness(data_stats, test_word_freq)
 
 # Method that starts the program
-if __name__ == "__main__":
-
+def main():
 
     # Dictionary of filename to frequencies
     # After training data
