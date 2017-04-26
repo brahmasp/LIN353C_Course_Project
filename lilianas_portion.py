@@ -9,6 +9,7 @@ import operator
 from nltk.corpus import brown
 from nltk.tokenize import RegexpTokenizer
 from word_freq_impl import remove_book_metadata, dict_mag, cosine_similarity, cosine_based_closeness
+from gen_pos import load_pos
 
 # lexical diversity is a measure of how many different words are in the text
 def lexical_diversity(text):
@@ -33,17 +34,8 @@ def word_bigram_frequencies():
     # go through each file and great a relative frequency dictionary
     # of all of the parts of speech bigrams
     for filename in glob.glob('books/*.txt'):
-        f = open(filename, 'r', encoding='utf8')
-
-        # Read the file
-        text = f.read()
-
-        # Extracting core content - removing metadata
-        text = remove_book_metadata(text);
-
-        # tokenize the file
-        tokenizer = RegexpTokenizer(r'\w+')
-        words = tokenizer.tokenize(text)
+        words = load_pos(filename, is_txt=True)
+        words = map(lambda x: x[0], words) # get rid of the POS, only keep words
 
         # create bigrams
         # get bigrams of the parts of speech
@@ -74,17 +66,10 @@ def pos_bigram_frequencies():
     # go through each file and great a relative frequency dictionary
     # of all of the parts of speech bigrams
     for filename in glob.glob('books/*.txt'):
-
-        f = open(filename, 'r', encoding='utf8')
-
-        # Read the file
-        text = f.read()
-
-        # Extracting core content - removing metadata
-        text = remove_book_metadata(text);
+        pos_tuples = load_pos(filename, is_txt=True)
 
         # now make the counts relative to the number of bigrams
-        pos_relative_freq = relative_pos_bigram_freq(text)
+        pos_relative_freq = relative_pos_bigram_freq(pos_tuples)
 
         # store each filename with its relative freqency vector
         if filename not in data_stats:
@@ -96,16 +81,9 @@ def pos_bigram_frequencies():
 
 
 # create realtive frequencies for bigram lists
-def relative_pos_bigram_freq(text):
-    # tokenize the file and split it into its POS tuples
-    tokenizer = RegexpTokenizer(r'\w+')
-    text = tokenizer.tokenize(text)
-    pos_tuples = nltk.pos_tag(text)
-
+def relative_pos_bigram_freq(pos_tuples):
     # get only the parts of speech
-    pos_bigrams = list()
-    for word,pos in pos_tuples:
-        pos_bigrams.append(pos)
+    pos_bigrams = map(lambda x: x[1], pos_tuples) # only keep POs, not words
 
     # get bigrams of the parts of speech
     pos_bigrams = set(nltk.bigrams(pos_bigrams))
@@ -124,21 +102,11 @@ def detect_author_bigram_freq(word_data_stats, pos_data_stats, test_name):
 
     # go through each unknown document and get its relative bigram frequency
     for test_filename in glob.glob(test_name):
-        f = open(test_filename, 'r', encoding='utf8')
+        pos_tuples = load_pos(test_filename, is_txt=True)
 
-        # Read the file
-        text = f.read()
+        words = map(lambda x: x[0], pos_tuples) # get rid of the POS, only keep words
 
-        # Extracting core content - removing metadata
-        text = remove_book_metadata(text);
-
-        # get the relative bigram frequency for POS
-        pos_bigram_freq = relative_pos_bigram_freq(text)
-
-        # get the relative bigram frequency for words
-        # tokenize the file
-        tokenizer = RegexpTokenizer(r'\w+')
-        words = tokenizer.tokenize(text)
+        pos_bigram_freq = relative_pos_bigram_freq(pos_tuples)
 
         # create bigrams
         # get bigrams of the parts of speech
