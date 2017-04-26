@@ -34,24 +34,15 @@ def word_bigram_frequencies():
     # go through each file and great a relative frequency dictionary
     # of all of the parts of speech bigrams
     for filename in glob.glob('books/*.txt'):
-        words = load_pos(filename, is_txt=True)
-        words = map(lambda x: x[0], words) # get rid of the POS, only keep words
+        pos_tuples = load_pos(filename, is_txt=True)
 
         # create bigrams
         # get bigrams of the parts of speech
-        word_bigrams = set(nltk.bigrams(words))
-
-        # get the number of bigrams in the file so you can find RELATIVE freq
-        num_bigrams = len(word_bigrams)
-
-        # relative freqency of each bigram
-        word_bigrams = dict(Counter(word_bigrams))
-        for bigram in word_bigrams:
-            word_bigrams[bigram] /= num_bigrams
+        word_bigram_freq = word_bigram_cnt(pos_tuples)
 
         # store each filename with its relative freqency vector
         if filename not in data_stats:
-            data_stats[filename] = word_bigrams;
+            data_stats[filename] = word_bigram_freq
         else:
             print("Error: same file name! " + filename)
 
@@ -69,34 +60,28 @@ def pos_bigram_frequencies():
         pos_tuples = load_pos(filename, is_txt=True)
 
         # now make the counts relative to the number of bigrams
-        pos_relative_freq = relative_pos_bigram_freq(pos_tuples)
+        pos_bigram_freq = pos_bigram_cnt(pos_tuples)
 
         # store each filename with its relative freqency vector
         if filename not in data_stats:
-            data_stats[filename] = pos_relative_freq;
+            data_stats[filename] = pos_bigram_freq;
         else:
             print("Error: same file name! " + filename)
 
     return data_stats
 
 
-# create realtive frequencies for bigram lists
-def relative_pos_bigram_freq(pos_tuples):
-    # get only the parts of speech
-    pos_bigrams = map(lambda x: x[1], pos_tuples) # only keep POs, not words
+def pos_bigram_cnt(pos_tuples):
+    pos_list = map(lambda x: x[1], pos_tuples)
+    pos_bigrams = nltk.bigrams(pos_list)
 
-    # get bigrams of the parts of speech
-    pos_bigrams = set(nltk.bigrams(pos_bigrams))
+    return dict(Counter(pos_bigrams))
 
-    # get the number of bigrams in the file so you can find RELATIVE freq
-    num_bigrams = len(pos_bigrams)
+def word_bigram_cnt(pos_tuples):
+    word_list = map(lambda x: x[0], pos_tuples)
+    word_bigrams = nltk.bigrams(word_list)
 
-    # relative freqency of each bigram
-    pos_bigrams = dict(Counter(pos_bigrams))
-    for bigram in pos_bigrams:
-        pos_bigrams[bigram] /= num_bigrams
-
-    return pos_bigrams
+    return dict(Counter(word_bigrams))
 
 def detect_author_bigram_freq(word_data_stats, pos_data_stats, test_name):
 
@@ -106,19 +91,11 @@ def detect_author_bigram_freq(word_data_stats, pos_data_stats, test_name):
 
         words = map(lambda x: x[0], pos_tuples) # get rid of the POS, only keep words
 
-        pos_bigram_freq = relative_pos_bigram_freq(pos_tuples)
+        # pos_bigram_freq = relative_pos_bigram_freq(pos_tuples)
+        pos_bigram_freq = pos_bigram_cnt(pos_tuples)
 
         # create bigrams
-        # get bigrams of the parts of speech
-        word_bigrams = set(nltk.bigrams(words))
-
-        # get the number of bigrams in the file so you can find RELATIVE freq
-        num_bigrams = len(word_bigrams)
-
-        # relative freqency of each bigram
-        word_bigrams = dict(Counter(word_bigrams))
-        for bigram in word_bigrams:
-            word_bigrams[bigram] /= num_bigrams
+        word_bigram_freq = word_bigram_cnt(pos_tuples)
 
         print("Estimate based on POS bigrams")
         # get the cosine angle between POS bigrams and the training data
@@ -126,7 +103,7 @@ def detect_author_bigram_freq(word_data_stats, pos_data_stats, test_name):
         print(" ")
         print("Estimate based on word bigrams")
         # get the cosine angle between word bigrams and the training data
-        cosine_based_closeness(word_data_stats, word_bigrams)
+        cosine_based_closeness(word_data_stats, word_bigram_freq)
 
 
 # try to guess author based on lexical diversity
@@ -198,4 +175,4 @@ if __name__ == "__main__":
         print(" ");
         print("Currently testing file: " + test_filename);
         detect_author_bigram_freq(word_bigrams, pos_bigrams, test_filename)
-        detect_author_lexical_diversity(test_filename)
+        # detect_author_lexical_diversity(test_filename)
